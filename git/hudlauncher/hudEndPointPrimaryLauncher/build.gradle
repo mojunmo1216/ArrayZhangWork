@@ -1,0 +1,172 @@
+apply plugin: 'com.android.application'
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('hud.properties').newDataInputStream())
+
+
+android {
+    signingConfigs {
+        release {
+            keyAlias properties.getProperty("keyAlias")
+            keyPassword properties.getProperty("keyPwd")
+            storeFile file(rootDir.getAbsolutePath()+File.separatorChar+properties.getProperty("keyFile"))
+            storePassword properties.getProperty("keyPwd")
+        }
+    }
+    compileSdkVersion 21
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "com.haloai.hud.hudendpoint.primarylauncher"
+        minSdkVersion 19
+        targetSdkVersion 21
+        versionCode Integer.valueOf(properties.getProperty("versionCode"))
+        versionName properties.getProperty("versionName")
+        ndk {
+            ldLibs = ["jnigraphics"]
+            moduleName "TurnProtocolParser"
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    android.applicationVariants.all {
+        variant ->
+            variant.outputs.each {
+                output -> output.outputFile = new File(output.outputFile.parent, "HUD_" + defaultConfig.versionName + "_" + buildType.name + ".apk");
+            }
+    }
+
+
+    buildTypes {
+        release {
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            //混淆
+            minifyEnabled false
+            // apk优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            //混淆文件配置
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+
+            signingConfig signingConfigs.release
+            //高德release key
+            manifestPlaceholders = [amap_key: properties.getProperty("amapReleaseKey"),app_version: defaultConfig.versionName,bugly_app_id:properties.getProperty("buglyAppId"),app_code:properties.getProperty("versionCode"),screen_orien:properties.getProperty("screenOrien")]
+
+            ndk {
+                moduleName "TurnProtocolParser"
+                abiFilters "armeabi"
+            }
+        }
+        debug {
+            //高德debug key
+            manifestPlaceholders = [amap_key: properties.getProperty("amapDebugKey"),app_version: defaultConfig.versionName,bugly_app_id:properties.getProperty("buglyAppId"),app_code:properties.getProperty("versionCode"),screen_orien:properties.getProperty("screenOrien")]
+
+            ndk {
+                moduleName "TurnProtocolParser"
+                abiFilters "armeabi"
+            }
+
+        }
+    }
+
+
+    packagingOptions {
+        exclude 'META-INF/maven/com.belerweb/pinyin4j/pom.properties'
+        exclude 'META-INF/maven/com.belerweb/pinyin4j/pom.xml'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+    }
+}
+
+repositories {
+    flatDir {
+        maven { url "https://jitpack.io" }
+        dirs 'libs'
+    }
+}
+
+
+dependencies {
+    // 2.0.9
+    // compile files('libs/android-async-http-1.4.7.jar')
+    compile project(':hudUniversalIOLib')
+    compile 'com.tencent.bugly:nativecrashreport:latest.release'
+    //compile files('libs/hudUniversalIOLib.jar')
+    //compile files('libs/endpointssharedlib.jar')
+    compile project(':endpointsSharedLib')
+    compile project(':endpointsTransportLayerLib')
+    //compile files('libs/endpointsTransportLayerLib.jar')
+    compile project(':hudEndpointPhoneConnection')
+    //compile files('libs/hudendpointphoneconnection.jar')
+    compile project(':carrecorderlibrary')
+    compile(name: 'arwaylib-release', ext: 'aar')
+//    compile project(':arwaylib')
+    compile(name: 'openCVLibrary300-release', ext: 'aar')
+    compile files('libs/androidsvg-1.2.0.jar')
+    compile 'com.github.ybq:Android-SpinKit:1.1.0'
+    compile files('libs/iport-2.3.7.jar')
+}
+
+//task 根据properties替换项目参数配置
+task updateConfig << {
+   //文件目录，这里应该改为你的实际目录
+    def path = project.rootDir.getAbsolutePath() + '/endpointsSharedLib/src/main/java/com/haloai/hud/utils/HudConstants.java';
+    println path;
+    //读取旧的字符串
+    def gesture = findOldStr("IS_GESTURE");
+    def camera = findOldStr("IS_CAMERA");
+    def logfile = findOldStr("IS_LOGFILE");
+
+    //拼接为java的语句
+    def newGesture = "public static final boolean IS_GESTURE = " + properties.getProperty("isGesture") + ";"
+    def newCamera = "public static final boolean IS_CAMERA = " + properties.getProperty("isCamera") + ";"
+    def newLogfile = "public static final boolean IS_LOGFILE = " + properties.getProperty("isLogFile") + ";"
+    println newGesture;
+    println newCamera;
+    println newLogfile;
+    //重新写入到文件中
+    def updatedContent = new File(path).getText('UTF-8').replaceAll(gesture, newGesture).replaceAll(camera,newCamera).replaceAll(logfile,newLogfile);
+    new File(path).write(updatedContent, 'UTF-8');
+
+    //根据新增的内容生成ReleaseNote
+    def notePath = "../../release_note_"+ properties.getProperty("versionName")+".txt";
+    def content = "Hud版本号 " + properties.getProperty("versionCode") + "\nHud版本名 " + properties.getProperty("versionName") + "\n打开手势 "+properties.getProperty("isGesture") + "\n行车记录仪 " + properties.getProperty("isCamera")+"\n打印日志到文件 " + properties.getProperty("isLogFile");
+    content = content + "\n\nHud "+properties.getProperty("versionName")+" release_note:\n"+new String(properties.getProperty("releaseNote").getBytes('ISO8859-1'),'UTF-8');
+    new File(notePath).write(content,'UTF-8');
+}
+
+
+//读取旧的字符串
+def findOldStr(string) {
+    def path = project.rootDir.getAbsolutePath() + '/endpointsSharedLib/src/main/java/com/haloai/hud/utils/HudConstants.java';
+    def readerString = "";
+    new File(path).withReader('UTF-8') { reader ->
+        reader.eachLine {
+            //读取一行，如果发现有符合的字符，说明是我们要修改的那一行。
+            if (it.contains(string)) {
+                //保存it到string，然后返回
+                readerString <<= it
+                return readerString;
+            }
+        }
+        return readerString;
+    }
+}
+
+//编译之前先执行更新Hud配置的任务
+preBuild.dependsOn updateConfig
+
+//配置完hud.properties,执行自动打包的命令
+//gradle assembleRelease
+
+
+
+
+
+
+

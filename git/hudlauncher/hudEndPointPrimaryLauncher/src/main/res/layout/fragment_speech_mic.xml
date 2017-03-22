@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="268dp"
+    android:layout_height="100dp"
+    android:background="@android:color/transparent">
+    <RelativeLayout
+        android:id="@+id/speech_mic_view"
+        android:layout_width="268dp"
+        android:layout_height="100dp">
+        <!--外圈-->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="17dp"
+            android:src="@drawable/soundview_outer_ring" />
+
+        <!--内圈-->
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="56.5dp"
+            android:layout_marginTop="43.5dp"
+            android:src="@drawable/soundview_inner_ring" />
+
+        <!--识别用的旋转环-->
+        <ImageView
+            android:id="@+id/mic_loding_ring"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="29dp"
+            android:layout_marginTop="17dp"
+            android:src="@drawable/soundview_recognize_ring" />
+
+        <!--收音用的环-->
+        <ImageView
+            android:id="@+id/mic_vlume_ring"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="21dp"
+            android:src="@drawable/soundview_receiver_ring" />
+
+        <!--话筒-->
+        <ImageView
+            android:id="@+id/mic_center_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/soundview_microphone" />
+
+        <!--左侧那条线-->
+        <ImageView
+            android:id="@+id/mic_left_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-48dp"
+            android:layout_marginTop="44dp"
+            android:src="@drawable/soundview_left_line" />
+
+        <!--右侧那条线-->
+        <ImageView
+            android:id="@+id/mic_right_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-48dp"
+            android:layout_marginTop="52dp"
+            android:src="@drawable/soundview_right_line" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/speech_panel_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="93dp"
+        android:layout_marginTop="63dp"
+        android:ellipsize="end"
+        android:maxEms="25"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <!--音量值的显示-->
+    <TextView
+        android:id="@+id/speech_volume_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="37dp"
+        android:ellipsize="end"
+        android:maxEms="25"
+        android:singleLine="true"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <!--音量加减旋转圈-->
+    <ImageView
+        android:id="@+id/speech_volume_ring"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="11dp"
+        android:visibility="invisible"
+        android:src="@drawable/soundview_volume_circle_rotate"/>
+
+    <!--音量环的容器， 放在最下面，避免被黑板挡住-->
+    <FrameLayout
+        android:id="@+id/speech_receiver_voice"
+        android:layout_width="84dp"
+        android:layout_height="88dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="6dp"
+        android:background="@android:color/transparent"></FrameLayout>
+
+</RelativeLayout>

@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/amap_poilist_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true">
+
+        <ImageView
+            android:id="@+id/poi_select_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="190dp"
+            android:src="@drawable/select" />
+
+        <RelativeLayout
+            android:id="@+id/amap_poilist_layout_base"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="190dp"
+            android:layout_height="180dp"
+            android:background="@android:color/black">
+
+
+           <!-- <ImageView
+                android:layout_width="@dimen/speech_panel_title_icon_size"
+                android:layout_height="@dimen/speech_panel_title_icon_size"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="98dp"
+                android:layout_marginTop="70dp"
+                android:background="@drawable/voice_menu_icon_navigation" />
+
+            <TextView
+                android:id="@+id/amap_poilist_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="124dp"
+                android:layout_marginTop="68dp"
+                android:text="@string/amap_locchoose_title"
+                android:textColor="@color/white"
+                android:textSize="18sp" />-->
+        </RelativeLayout>
+    <RelativeLayout
+        android:layout_alignParentRight="true"
+        android:layout_width="50dp"
+        android:layout_height="180dp"
+        android:background="@android:color/black"/>
+      <!--  <LinearLayout
+            android:id="@+id/amap_poilist_points"
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+            android:layout_marginLeft="260dp"
+            android:layout_marginTop="156dp"
+            android:orientation="horizontal"></LinearLayout>-->
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/amap_new_strategy_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:animateLayoutChanges="true">
+
+        <ImageView
+            android:id="@+id/amap_strategy_route_image_left"
+            android:layout_width="294.66dp"
+            android:layout_height="154.66dp"
+            android:layout_marginLeft="-54.66dp"
+            android:layout_marginTop="25.33dp" />
+
+        <ImageView
+            android:id="@+id/amap_strategy_route_image"
+            android:layout_width="294.66dp"
+            android:layout_height="154.66dp"
+            android:layout_marginLeft="240dp"
+            android:layout_marginTop="25.33dp" />
+
+        <ImageView
+            android:layout_width="294.66dp"
+            android:layout_height="154.66dp"
+            android:layout_marginLeft="-54.66dp"
+            android:layout_marginTop="25.33dp"
+            android:background="@android:color/black"/>
+
+
+
+        <!--
+               <ImageView
+                   android:id="@+id/route_selection_image"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="28dp"
+                   android:layout_marginTop="13dp"
+                   android:src="@drawable/selection_bg" />
+
+             <LinearLayout
+                   android:id="@+id/amap_new_deatfual"
+                   android:layout_width="200dp"
+                   android:layout_height="30dp"
+                   android:layout_marginLeft="28dp"
+                   android:layout_marginTop="10dp"
+                   android:orientation="horizontal">
+
+                   <ImageView
+                       android:layout_width="@dimen/speech_panel_title_icon_size"
+                       android:layout_height="@dimen/speech_panel_title_icon_size"
+                       android:layout_gravity="center_vertical"
+                       android:layout_marginLeft="5dp"
+                       android:src="@drawable/poi_number_first" />
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_gravity="center_vertical"
+                       android:layout_marginLeft="18dp"
+                       android:textColor="@color/white"
+                       android:text="用时最少"
+                       android:textSize="16sp" />
+
+                   <TextView
+                       android:id="@+id/amap_new_deatfual_num"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_gravity="center_vertical"
+                       android:layout_marginLeft="15dp"
+                       android:textColor="@color/white"
+                       android:text="2.5小时"
+                       android:textSize="16sp" />
+               </LinearLayout>
+
+               <LinearLayout
+                   android:id="@+id/amap_new_avoid"
+                   android:layout_width="200dp"
+                   android:layout_height="30dp"
+                   android:layout_marginLeft="28dp"
+                   android:layout_marginTop="40dp"
+                   android:orientation="horizontal">
+
+                   <ImageView
+                       android:layout_width="@dimen/speech_panel_title_icon_size"
+                       android:layout_height="@dimen/speech_panel_title_icon_size"
+                       android:layout_gravity="center_vertical"
+                       android:layout_marginLeft="5dp"
+                       android:src="@drawable/poi_number_second" />
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_gravity="center_vertical"
+                       android:layout_marginLeft="18dp"
+                       android:textColor="@color/white"
+                       android:text="躲避拥堵"
+                       android:textSize="16sp" />
+
+                   <TextView
+                       android:id="@+id/amap_new_avoid_num"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:textColor="@color/white"
+                       android:layout_gravity="center_vertical"
+                       android:layout_marginLeft="15dp"
+                       android:text="29分钟"
+                       android:textSize="16sp" />
+               </LinearLayout>
+
+               <LinearLayout
+                   android:id="@+id/amap_new_time"
+                   android:layout_width="200dp"
+                   android:layout_height="30dp"
+                   android:layout_marginLeft="28dp"
+                   android:layout_marginTop="70dp"
+                   android:orientation="horizontal">
+
+                   <ImageView
+                       android:layout_width="@dimen/speech_panel_title_icon_size"
+                       android:layout_height="@dimen/speech_panel_title_icon_size"
+                       android:layout_gravity="center_vertical"
+                       android:layout_marginLeft="5dp"
+                       android:src="@drawable/poi_number_third" />
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_gravity="center_vertical"
+                       android:layout_marginLeft="18dp"
+                       android:textColor="@color/white"
+                       android:text="距离最短"
+                       android:textSize="16sp" />
+
+                   <TextView
+                       android:id="@+id/amap_new_time_num"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_gravity="center_vertical"
+                       android:layout_marginLeft="15dp"
+                       android:textColor="@color/white"
+                       android:text="59分钟"
+                       android:textSize="16sp" />
+               </LinearLayout>-->
+
+        <ImageView
+            android:id="@+id/route_selection_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/selection_bg" />
+
+        <LinearLayout
+            android:id="@+id/amap_new_deafutal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="20dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/amap_new_deatfual_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="推 荐"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
+            <TextView
+                android:id="@+id/amap_new_deatfual_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="25min"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/amap_new_deatfual_dist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="22.km"
+                android:textSize="16sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/amap_new_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="95dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/amap_new_time_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="最 快"
+                android:textColor="@color/gary"
+                android:textSize="19sp"/>
+            <TextView
+                android:id="@+id/amap_new_time_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gary"
+                android:text="25min"
+                android:textSize="17sp" />
+            <TextView
+                android:id="@+id/amap_new_time_dist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gary"
+                android:text="22.km"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/amap_new_avoid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="170dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/amap_new_avoid_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="最 短"
+                android:textColor="@color/gary"
+                android:textSize="19sp"/>
+            <TextView
+                android:id="@+id/amap_new_avoid_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gary"
+                android:text="25min"
+                android:textSize="17sp" />
+            <TextView
+                android:id="@+id/amap_new_avoid_dist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gary"
+                android:text="22.4km"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="95dp"
+            android:layout_marginTop="129dp"
+            android:textColor="@color/white"
+            android:text="开始导航"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/amap_new_strategy_time_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="177dp"
+            android:layout_marginTop="128dp"
+            android:text="9"
+            android:textColor="#ff7200"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <!--<com.amap.api.navi.AMapNaviView
+        android:id="@+id/main_amap_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.amap.api.navi.AMapNaviView>-->
+
+</FrameLayout>

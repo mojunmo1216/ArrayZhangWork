@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="grey"> #ebebeb</color>
+    <color name="black"> #000000</color>
+    <color name="darkgrey"> #C0C0C0</color>
+    <color name="white"> #FFFFFF</color>
+    <color name="red"> #FF0000</color>
+    <color name="f850_default_blue">#0079ff</color>
+
+    <drawable name="transparent">#00000000</drawable>
+
+    <color name="header_toast_bg">#ccebfc</color>
+    <color name="header_toast">#024ca1</color>
+    <color name="header_toast_line">#abdaf4</color>
+    <color name="offline_down_title">#909090</color>
+    <color name="offline_head_font">#FFFFFF</color>
+    <color name="gary">#898989</color>
+    <color name="taobao_black">#333333</color>
+    <color name="offline_down_size">#777777</color>
+    <color name="gray_lite">#c5c5c5</color>
+    <color name="progress_background">#ededed</color>
+    <color name="blue">#4c90f9</color>
+    <color name="darkyellow"> #FFCC33</color>
+
+    <color name="strategy_path_start"> #5ed2d3</color>
+    <color name="strategy_path_end"> #006cfe</color>
+    <color name="color_strategy_path_shadow"> #006cfe </color>
+
+    <color name="color_speech_panel_title"> #FFFFFF</color>
+    <color name="color_speech_panel_subtitle"> #FFFFFF</color>
+    <color name="color_speech_panel_no_network">  #585858</color>
+
+</resources>

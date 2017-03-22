@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/fragment_incoming_sixline_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/black"
+                tools:context=".HudLauncherActivity"
+                tools:ignore="MergeRootFrame">
+    <!--无摄像头 130dp-->
+    <!--摄像头 95dp-->
+    <!--005 90dp-->
+    <!--001 85dp-->
+    <!--003 60dp-->
+    <RelativeLayout
+        android:layout_width="560dp"
+        android:layout_height="186.7dp"
+        android:background="@android:color/white"
+        android:id="@+id/amap_main">
+        <!--原生高德导航图-->
+        <!--   <fragment
+               android:id="@+id/amap_fragment_native_amap"
+               android:name="com.haloai.hud.hudendpoint.fragments.amap.HudAMapFragmentNative"
+               android:layout_width="match_parent"
+           android:layout_height="match_parent"></fragment>-->
+        <!--android:name="com.haloai.hud.hudendpoint.arwaylib.arway.impl_gl.ARwayOpenGLFragment"-->
+
+    </RelativeLayout>
+</RelativeLayout>

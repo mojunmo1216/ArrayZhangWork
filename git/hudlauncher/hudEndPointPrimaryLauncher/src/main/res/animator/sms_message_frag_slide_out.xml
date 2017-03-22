@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android" >
+   
+    <objectAnimator
+        android:duration="500"
+        android:propertyName="y"   
+        android:valueFrom="0"
+        android:valueTo="-380"
+        android:valueType="floatType" />
+    
+    <!-- 
+    android:valueTo="-280"
+    android:valueFrom="0"
+    android:valueTo="-140"
+     -->
+
+</set>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HudUpgraderServer</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="uuid_error">连接断开，安装失败，请重试！</string>
+    <string name="md5_error">文件损坏，安装失败，请重试！</string>
+    <string name="val_error">验证失败，请重试！</string>
+
+</resources>

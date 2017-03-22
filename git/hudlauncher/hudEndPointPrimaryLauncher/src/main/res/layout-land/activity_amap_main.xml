@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_incoming_sixline_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context=".HudLauncherActivity"
+    tools:ignore="MergeRootFrame">
+    <!--无摄像头 130dp-->
+    <!--摄像头 95dp-->
+    <!--005 90dp-->
+    <!--001 85dp-->
+    <!--003 60dp-->
+<RelativeLayout
+    android:layout_width="560dp"
+    android:layout_height="186.7dp"
+    android:background="@android:color/transparent"
+    android:id="@+id/amap_main">
+        <!--原生高德导航图-->
+     <!--   <fragment
+            android:id="@+id/amap_fragment_native_amap"
+            android:name="com.haloai.hud.hudendpoint.fragments.amap.HudAMapFragmentNative"
+            android:layout_width="match_parent"
+        android:layout_height="match_parent"></fragment>-->
+
+        <fragment
+            android:id="@+id/amap_fragment_naving"
+            android:name="com.haloai.hud.hudendpoint.arwaylib.arway.impl_gl.ARwayOpenGLFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" />
+
+        <fragment
+            android:id="@+id/amap_fragment_navi"
+            android:name="com.haloai.hud.hudendpoint.fragments.amap.HudAMapFragmentNavi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" />
+
+        <fragment
+            android:id="@+id/amap_fragment_main"
+            android:name="com.haloai.hud.hudendpoint.fragments.amap.HudAMapFragmentMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" />
+
+        <fragment
+            android:id="@+id/amap_fragment_outgoing"
+            android:name="com.haloai.hud.hudendpoint.fragments.common.HudAMapFragmentOutgoing"
+            android:layout_width="940dp"
+            android:layout_height="186.7dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="-380dp" />
+
+        <fragment
+            android:id="@+id/amap_fragment_carrecorder"
+            android:name="com.haloai.hud.hudendpoint.fragments.common.HudCarRecorderFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" />
+
+        <fragment
+            android:id="@+id/amap_fragment_speechpanel"
+            android:name="com.haloai.hud.hudendpoint.fragments.common.HudSpeechPanelFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" />
+
+        <fragment
+            android:id="@+id/amap_fragment_dialog"
+            android:name="com.haloai.hud.hudendpoint.fragments.common.HudDialogFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" />
+
+
+        <fragment
+            android:id="@+id/amap_fragment_receiver"
+            android:name="com.haloai.hud.hudendpoint.fragments.common.HudSpeechReceiverFragment"
+            android:layout_width="268dp"
+            android:layout_height="91.7dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="-5dp"
+            android:layout_marginTop="95dp"></fragment>
+
+        <fragment
+            android:id="@+id/amap_fragment_status"
+            android:name="com.haloai.hud.hudendpoint.fragments.common.HudStatusBarFragment"
+            android:layout_width="400dp"
+            android:layout_height="28dip"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="-203dp"></fragment>
+        <!-- -203dp-->
+
+    </RelativeLayout>
+</RelativeLayout>

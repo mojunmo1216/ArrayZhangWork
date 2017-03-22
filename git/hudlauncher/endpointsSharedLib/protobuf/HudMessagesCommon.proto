@@ -1,0 +1,10 @@
+package com.haloai.hud.proto;
+
+message ResourceRequest {
+    required string req_id = 1;			
+	required string time_stamp = 2;
+	required string resource_name = 3;
+}
+
+
+

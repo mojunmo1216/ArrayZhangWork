@@ -1,0 +1,61 @@
+package com.haloai.hud.proto;
+option java_package = "com.haloai.hud.proto";
+
+//导航状态更新
+message NaviStatusUpdatedMessage {
+	required NavigationStatus newStatus	=	1;
+	
+	enum NavigationStatus {
+		NAVIGATION_START		=	1;
+		NAVIGATION_END			=	2;		
+		CRUISE_START			=	3;
+		CRUISE_END				=	4;
+		ROUTE_PLAN_YAWING		=	5;
+		REROUTE_PLAN_COMPLETE	=	6;
+		GPS_LOST				=	7;
+		GPS_NORMAL				=	8;
+	}
+}
+
+//辅助诱导信息
+message AssistantIndicationMessage {
+	required int32 assistant_type	=	1;	//Negotiating between endpoints 
+	optional int32 int_param1		=	2;
+	optional int32 int_param2		=	3;
+	optional string str_param1	=	4;	//reserve param
+	optional string str_param2	=	5;	//reserve param
+}
+
+//服务区状态更新
+message ServiceAreaUpdatedMessage {
+	optional string name	=	1;		//It means service area passed when there isnot 'name' parameter.
+	required int32 distance	=	2;		//Unit is meter. It means service area passed when 'distance' equals to 0
+}
+
+//机动点更新
+message ManeuverChangedMessage {
+	required string maneuver_name	=	1;
+	required int32	distance		=	2;	//unit is meter
+}
+
+//目的地余下距离和时间更新
+message DestinationInfoUpdatedMessage {
+	required int32 remain_distance	=	1;	//unit is meter.
+	required int32 remain_time		=	2;	//unit is second.
+}
+
+//道路信息更新
+message RoadInfoUpdatedMessage {
+	optional string current_road_name	=	1;
+	optional string next_road_name		=	2;
+}
+
+message NavigationCommandMessage {
+	optional NaviStatusUpdatedMessage	navi_status_updated_message	=	1;
+	optional AssistantIndicationMessage	assitant_indication_message	=	2;
+	optional ServiceAreaUpdatedMessage	service_area_updated_message =	3;
+	optional ManeuverChangedMessage		maneuver_changed_message =		4;
+	optional DestinationInfoUpdatedMessage desti_info_updated_message =	5;
+	optional RoadInfoUpdatedMessage		road_info_update_message	  = 6;
+}
+

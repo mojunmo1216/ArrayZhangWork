@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="940dp"
+    android:layout_height="186.7dp" >
+    
+    <RelativeLayout 
+        android:id="@+id/amap_outgoing_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        >
+        <LinearLayout 
+            android:id="@+id/amap_outgoing_list_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="24.67dp"
+            android:layout_marginLeft="36.67dp"
+            android:background="@color/black">
+
+            <ImageView 
+                android:layout_width="18dp"
+                android:layout_height="21.33dp"
+                android:src="@drawable/voice_menu_icon_call"
+                />
+            <TextView 
+                android:id="@+id/amap_outgoing_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18.67dp"
+                android:text="请选择第几个:"
+                android:layout_marginLeft="12dp"
+                />
+        </LinearLayout>
+        <RelativeLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="66.67dp"
+            android:id="@+id/amap_outgoing_content">
+            <RelativeLayout 
+                android:layout_width="313.33dp"
+                android:layout_height="50.67dp"
+                android:id="@+id/amap_outgoing_first_page"
+                ></RelativeLayout>
+            <RelativeLayout 
+                android:layout_width="313.33dp"
+                android:layout_height="50.67dp"
+                android:layout_marginLeft="313.33dp"
+                android:id="@+id/amap_outgoing_second_page"
+                ></RelativeLayout>
+            <RelativeLayout 
+                android:layout_width="313.33dp"
+                android:layout_height="50.67dp"
+                android:layout_marginLeft="626.66dp"
+                android:id="@+id/amap_outgoing_third_page"
+                ></RelativeLayout>
+        </RelativeLayout>
+        
+        <View
+            android:layout_width="96.67dp"
+            android:layout_height="50.67dp"
+            android:layout_marginTop="66.67dp"
+            android:background="@color/black"
+            />
+        <View 
+            android:layout_width="530dp"
+            android:layout_height="50.67dp"
+            android:layout_marginTop="66.67dp"
+            android:layout_marginLeft="410dp"
+            android:background="@color/black"
+            />
+
+        <RelativeLayout
+            android:layout_width="560dp"
+            android:layout_height="186.7dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true">
+            <LinearLayout
+                android:id="@+id/amap_outgoing_points"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="158.67dp"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal"
+                ></LinearLayout>
+        </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/amap_outgoing_ll_calling"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="invisible"
+        android:layout_centerInParent="true"
+        >
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/greenline_caller_icon"
+            />
+	    <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="20dp"
+	        android:layout_marginLeft="10dp"
+	        android:id="@+id/amap_outgoing_call_info"
+	        />
+    </LinearLayout>
+    </RelativeLayout>
+    
+
+</FrameLayout>

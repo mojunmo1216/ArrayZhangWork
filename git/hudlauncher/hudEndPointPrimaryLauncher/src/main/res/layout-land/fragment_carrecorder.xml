@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <!-- 播放页面 -->
+    <RelativeLayout
+        android:id="@+id/carrecorder_play"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/carrecorder_play_firstimage"
+            android:layout_width="331.852dp"
+            android:layout_height="186.67dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="-186.67dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher" />
+
+        <ImageView
+            android:id="@+id/carrecorder_play_secondimage"
+            android:layout_width="331.852dp"
+            android:layout_height="186.67dp"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher" />
+
+        <ImageView
+            android:id="@+id/carrecorder_play_thirdimage"
+            android:layout_width="331.852dp"
+            android:layout_height="186.67dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="186.67dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher" />
+
+        <LinearLayout
+            android:id="@+id/carcorder_videoinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="103dp"
+            android:layout_marginTop="50dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/carcorder_video_date"
+                style="@style/CarRecorderTextStyle"
+                android:text="2016.07.11"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/carcorder_video_time"
+                style="@style/CarRecorderTextStyle"
+                android:layout_marginTop="3dp"
+                android:text="13.35——13.36"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/carcorder_video_size"
+                style="@style/CarRecorderTextStyle"
+                android:layout_marginTop="3dp"
+                android:text="43.97M"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/carcorder_videoinfo_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="50dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/carcorder_video_date_back"
+                style="@style/CarRecorderTextStyle"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/carcorder_video_time_back"
+                style="@style/CarRecorderTextStyle"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/carcorder_video_size_back"
+                style="@style/CarRecorderTextStyle"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="-10dp"
+            android:background="@android:color/black" />
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="110dp"
+            android:background="@android:color/black" />
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="62dp"
+            android:src="@drawable/carrecorder_play_pre_icon" />
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="186dp"
+            android:layout_marginTop="62dp"
+            android:src="@drawable/carrecorder_play_next_icon" />
+
+        <FrameLayout
+            android:id="@+id/carrecorder_play_videocontainer"
+            android:layout_width="331.852dp"
+            android:layout_height="186.67dp"
+            android:layout_alignParentRight="true">
+
+            <RelativeLayout
+                android:id="@+id/carcorder_video_progress_micinfo"
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/carcorder_seekbar_bg"
+                android:backgroundTintMode="screen">
+
+                <TextView
+                    android:id="@+id/carcorder_video_seekbar_current_time"
+                    style="@style/CarRecorderTextStyle"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="280dp"
+                    android:text="03:20"
+                    android:textSize="10sp" />
+
+                <!--播放用的进度条-->
+                <!--<SeekBar
+                    android:id="@+id/carcorder_video_seekbar"
+                    android:layout_width="225dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="3dp"
+                    android:progressDrawable="@drawable/carcorder_seekbar"
+                    android:thumb="@drawable/carcorder_seekbar_point" />-->
+
+                <TextView
+                    android:id="@+id/carcorder_video_seekbar_total_time"
+                    style="@style/CarRecorderTextStyle"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/carcorder_video_seekbar_current_time"
+                    android:layout_marginLeft="0.5dp"
+                    android:text="-16:55"
+                    android:textSize="10sp" />
+
+                <TextView
+                    style="@style/CarRecorderTextStyle"
+                    android:id="@+id/carcorder_video_prompt"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="快进 / 快退 / 加锁 / 删除"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/carcorder_video_image_lock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/carrecorder_lock" />
+        </FrameLayout>
+    </RelativeLayout>
+
+    <!-- 预览页面 -->
+    <RelativeLayout
+        android:id="@+id/carrecorder_scan"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/carcorder_scan_text"
+            style="@style/CarRecorderTextStyle"
+            android:layout_width="100dp"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="50dp"
+            android:lines="3"
+            android:text="您可根据预览画面自动调节行车记录仪" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/carrecorder_scan_camera_icon" />
+
+        <FrameLayout
+            android:id="@+id/carrecorder_scan_sancotainer"
+            android:layout_width="331.852dp"
+            android:layout_height="186.67dp"
+            android:layout_alignParentRight="true">
+
+            <!--<RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/carcorder_seekbar_bg"
+                android:backgroundTintMode="screen">
+            </RelativeLayout>-->
+        </FrameLayout>
+
+        <TextView
+            style="@style/CarRecorderTextStyle"
+            android:layout_height="26dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="227.56dp"
+            android:background="@drawable/carcorder_seekbar_bg"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="精彩视频 / 循环视频 / 退出"
+            android:textSize="13sp" />
+    </RelativeLayout>
+</FrameLayout>

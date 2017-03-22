@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/speech_panel_viewgroup"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/speech_main_panel_viewgroup"
+        layout="@layout/layout_speech_panel_main" >
+    </include>
+    <include
+        android:id="@+id/speech_main_navi_panel_viewgroup"
+        layout="@layout/layout_speech_panel_main_naving" >
+    </include>
+    <include
+        android:id="@+id/speech_call_panel_viewgroup"
+        layout="@layout/layout_speech_panel_call" >
+    </include>
+
+    <include
+        android:id="@+id/speech_common_panel_viewgroup"
+        layout="@layout/layout_speech_panel_common" >
+    </include>
+
+    <include
+        android:id="@+id/speech_navi_panel_viewgroup"
+        layout="@layout/layout_speech_panel_navi" >
+    </include>
+
+    <include
+        android:id="@+id/speech_music_panel_viewgroup"
+        layout="@layout/layout_speech_panel_music" >
+    </include>
+
+    <include
+        android:id="@+id/speech_no_network_panel_viewgroup"
+        layout="@layout/layout_speech_panel_music" >
+    </include>
+
+    <include
+        android:id="@+id/speech_music_control_viewgroup"
+        layout="@layout/layout_speech_panel_music_control">
+    </include>
+
+
+</RelativeLayout>
+
+    <!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="560dp"-->
+    <!--android:layout_height="186.7dp">-->
+
+<!--&lt;!&ndash;-->
+
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/speech_main_panel_viewgroup"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@android:color/black"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:visibility="invisible">-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:layout_weight="3"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<ImageView-->
+                <!--android:id="@+id/prompt_navi_imageview"-->
+                <!--android:layout_width="18dp"-->
+                <!--android:layout_height="20dp"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:scaleType="fitXY"-->
+                <!--android:src="@drawable/greenline_caller_icon" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/prompt_navi_textview"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:text="@string/prompt_navi_demo"-->
+                <!--android:textSize="10.67sp" />-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:layout_weight="3"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<ImageView-->
+                <!--android:id="@+id/prompt_call_imageview"-->
+                <!--android:layout_width="18dp"-->
+                <!--android:layout_height="20dp"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:scaleType="fitXY"-->
+                <!--android:src="@drawable/greenline_caller_icon" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/prompt_call_textview"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:text="@string/prompt_call_demo"-->
+                <!--android:textSize="10.67sp" />-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:layout_weight="3"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<ImageView-->
+                <!--android:id="@+id/prompt_music_imageview"-->
+                <!--android:layout_width="18dp"-->
+                <!--android:layout_height="20dp"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:scaleType="fitXY"-->
+                <!--android:src="@drawable/greenline_caller_icon" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/prompt_music_textview"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:text="@string/prompt_call_demo"-->
+                <!--android:textSize="10.67sp" />-->
+        <!--</LinearLayout>-->
+
+
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/speech_navi_panel_viewgroup"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@color/black"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:paddingTop="40dp"-->
+        <!--android:visibility="invisible">-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="7"-->
+            <!--android:orientation="vertical"-->
+            <!--android:paddingLeft="180dp">-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="深圳湾体育中心"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="@dimen/speech_panel_text_size" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="28dp"-->
+                <!--android:text="导航到深圳湾"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="@dimen/speech_panel_text_size" />-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="3"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="公司"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="@dimen/speech_panel_text_size" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="28dp"-->
+                <!--android:text="回家"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="@dimen/speech_panel_text_size" />-->
+        <!--</LinearLayout>-->
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/speech_call_panel_viewgroup"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@color/black"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:visibility="invisible">-->
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:layout_marginTop="80dp"-->
+            <!--android:text="@string/speech_pann_call_demo"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:textSize="@dimen/speech_panel_text_size" />-->
+
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/speech_music_panel_viewgroup"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@color/black"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:paddingTop="40dp"-->
+        <!--android:visibility="invisible">-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="5"-->
+            <!--android:orientation="vertical"-->
+            <!--android:paddingLeft="180dp">-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="播放陈奕迅的歌"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="@dimen/speech_panel_text_size" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="28dp"-->
+                <!--android:text="我想听激昂的歌曲"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="@dimen/speech_panel_text_size" />-->
+
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="3"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="义勇军进行曲"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="@dimen/speech_panel_text_size" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="28dp"-->
+                <!--android:text="下一首"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="@dimen/speech_panel_text_size" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="28dp"-->
+                <!--android:text="暂停"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="@dimen/speech_panel_text_size" />-->
+        <!--</LinearLayout>-->
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/new_speech_main_panel_viewgroup"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@color/black"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:visibility="visible">-->
+
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:visibility="gone"-->
+        <!--android:layout_height="match_parent">-->
+        <!--<com.haloai.hud.hudendpoint.fragments.amap.CardViewLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="28dp"-->
+                <!--android:text="下一首"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="@dimen/speech_panel_text_size" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="28dp"-->
+                <!--android:text="暂停"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="@dimen/speech_panel_text_size" />-->
+        <!--</com.haloai.hud.hudendpoint.fragments.amap.CardViewLayout>-->
+    <!--</LinearLayout>-->
+<!--&ndash;&gt;-->
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/speech_panel_viewgroup"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+        <!--&lt;!&ndash;<LinearLayout-->
+            <!--android:layout_width="465dp"-->
+            <!--android:layout_height="113.33dp">-->
+        <!--</LinearLayout>&ndash;&gt;-->
+    <!--</RelativeLayout>-->
+
+<!--</RelativeLayout>-->

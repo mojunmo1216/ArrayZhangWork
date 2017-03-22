@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="268dp"
+    android:layout_height="100dp"
+    android:background="@android:color/transparent">
+
+    <ImageView
+        android:id="@+id/view_greencircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-28dp"
+        android:layout_marginTop="37dp"
+        android:src="@drawable/soundview_greencircle" />
+
+    <ImageView
+        android:id="@+id/view_blackcircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-25.5dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/soundview_blackcircle" />
+
+    <!--上半弧-->
+    <ImageView
+        android:id="@+id/view_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="-7dp"
+        android:alpha="0"
+        android:src="@drawable/soundview_halfcircleup" />
+    <!--下半弧-->
+    <ImageView
+        android:id="@+id/view_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="92dp"
+        android:alpha="0"
+        android:src="@drawable/soundview_halfcircledown" />
+
+    <!--外圈-->
+    <ImageView
+        android:id="@+id/view_outerring"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="17dp"
+        android:alpha="0"
+        android:src="@drawable/soundview_outer_ring" />
+
+    <!--手势识别失败警示圈-->
+ <!--   <ImageView
+        android:id="@+id/view_gesture_recoginize_failure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="17dp"
+        android:alpha="0"
+        android:src="@drawable/soundview_gesture_recoginize_failure" />-->
+
+    <!--内圈-->
+    <ImageView
+        android:id="@+id/view_innerring"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginLeft="56.5dp"
+        android:layout_marginTop="43.5dp"
+        android:alpha="0"
+        android:src="@drawable/soundview_inner_ring" />
+
+    <!--识别用的旋转环-->
+    <ImageView
+        android:id="@+id/view_recognize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="17dp"
+        android:alpha="0"
+        android:src="@drawable/soundview_recognize_ring" />
+
+    <!--收音用的环-->
+    <ImageView
+        android:id="@+id/view_receiver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="34dp"
+        android:layout_marginTop="21dp"
+        android:alpha="0"
+        android:src="@drawable/soundview_receiver_ring" />
+
+    <!--话筒-->
+    <ImageView
+        android:id="@+id/view_microphone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="30dp"
+        android:alpha="0"
+        android:src="@drawable/soundview_microphone" />
+
+    <!--左侧那条线-->
+    <ImageView
+        android:id="@+id/view_leftline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-48dp"
+        android:layout_marginTop="44dp"
+        android:alpha="0"
+        android:src="@drawable/soundview_left_line" />
+
+    <!--右侧那条线-->
+    <ImageView
+        android:id="@+id/view_rightline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-48dp"
+        android:layout_marginTop="52dp"
+        android:alpha="0"
+        android:src="@drawable/soundview_right_line" />
+
+    <!--手势专属receiver-->
+
+    <RelativeLayout
+        android:id="@+id/view_fake_receiver"
+        android:layout_width="match_parent"
+        android:alpha="0"
+        android:layout_height="match_parent">
+
+        <!--左侧那条线-->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-48dp"
+            android:layout_marginTop="44dp"
+            android:src="@drawable/soundview_left_line" />
+
+        <!--右侧那条线-->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-48dp"
+            android:layout_marginTop="52dp"
+            android:src="@drawable/soundview_right_line" />
+
+        <!--识别用的旋转环-->
+        <ImageView
+            android:id="@+id/view_fake_recognize_ring"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="29dp"
+            android:layout_marginTop="17dp"
+            android:src="@drawable/soundview_recognize_ring" />
+
+        <!--外圈-->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="17dp"
+            android:src="@drawable/soundview_outer_ring" />
+
+        <!--话筒-->
+        <!--<ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/soundview_microphone" />-->
+
+        <!--用来装手势图标的imageview，不能与麦克风同一个框-->
+        <ImageView
+            android:id="@+id/view_gesture_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="30dp"
+            android:background="@android:color/black"
+            android:alpha="0" />
+
+    </RelativeLayout>
+</RelativeLayout>

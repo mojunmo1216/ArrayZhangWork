@@ -1,0 +1,87 @@
+syntax = "proto2";
+import "CommonMessagesProtoDef.proto";
+
+package com.haloai.hud.proto.v2;
+option java_package = "com.haloai.hud.proto.v2";
+//option java_outer_classname = "Hud2PhoneMessages";
+
+
+message HudInfoDeclaimProto {
+	required int32			protocol_version_code		=	1[default=1];//端到端协议版本标识码,只在protobuf定义文件中修改，不要在代码中设置
+	required string			firmware_version			=	2;			//HUD Firmware版本
+	required string			launcher_app_version_str	=	3;			//Hud App版本字符串
+	required int32			launcher_app_version_code	=	4;			//Hud App版本编码，Android下为VersionCode，iOS下为Build Number
+	required string			hud_unique_id				=	5;			//Hud唯一标识符，一般为硬件标识码
+	required string			hud_sim_iccid				=	6;			//Hud SIM卡 唯一标识
+}
+message HudStatusQueryRespProto {
+}
+
+message HudMiscInfoQueryRespProto {
+}
+
+message HudMusicInfoQueryRespProto {
+}
+
+message HudNaviInfoQueryRespProto {
+    required HudDataDefineProto hud_data_define     =   1;
+}
+
+message HudCarcorderInfoQueryRespProto {
+    required int32			hud_total_memory		    =	1;
+    required int32			hud_used_memory		        =	2;
+    required string			recorder_video_quality	    =	3;
+    required int32			loop_video_number		    =	4;
+    required int32			lock_video_number		    =	5;
+    required int32			wonderful_video_number		=	6;
+    required int32			emergency_video_number		=	7;
+}
+
+
+message HudQueryResponseProto {
+	optional HudStatusQueryRespProto	status_query_resp		=	1;
+	optional HudMiscInfoQueryRespProto  misc_info_query_resp	=	2;
+	optional HudMusicInfoQueryRespProto music_info_query_resp   =	3;
+	optional HudNaviInfoQueryRespProto  navi_info_query_resp	=	4;
+	optional HudCarcorderInfoQueryRespProto carcorder_info_query_resp=5;
+}
+
+message HudPrefQueryResponseProto {
+    required HudDataDefineProto hud_data_define =   1;
+}
+
+message HudCarcorderVideoInfoRespProto {
+    required string			video_name		            =	1;
+    required string			video_path		            =	2;
+    required int64			video_create_time           =	3;
+    required int32			video_time_length	        =	4;
+    required int32			video_size	                =	5;
+    optional bytes          thumbnail_bytes             =   6;
+}
+
+message RecorderVideoQueryRespProto {
+	required int32          begin_video_index                           =   1;          //当前视频下标
+	repeated HudCarcorderVideoInfoRespProto  videos_info                =   2;          //视频信息集合
+	required int32 video_number                                         =   3;          //视频个数
+	required RecorderTypeProto	recorder_type		                    =	4;		    //视频记录类型
+}
+message ThumbnailTransferRespProto {
+    required int32 thumbnail_index                      =   1;  //
+    repeated bytes thumbnail_bytes                      =   2;  //二进制文件数据
+    required int32 thumbnail_number                     =   3;
+    required RecorderTypeProto	recorder_type		    =	4;
+}
+
+message HudResponseIdProto{
+    required string hud_responese_serial_numer      =   1;  //Hud传给phone协议连接的唯一流水号
+}
+
+message Hud2PhoneMessagesProto {
+    required HudResponseIdProto             hud_respone_id              =   1;
+	optional HudQueryResponseProto  	    hud_query_resp	            =	2;
+	repeated RecorderVideoQueryRespProto	recorder_video_query_resp   =   3;
+	optional HudInfoDeclaimProto            hud_info_declaim            =   4;
+	optional HudStatusQueryRespProto        hud_status_query_resp       =   5;
+	repeated ThumbnailTransferRespProto     thumbnail_transfer_resp     =   6;
+	optional HudPrefQueryResponseProto      hud_pref_query_resp         =   7;
+}

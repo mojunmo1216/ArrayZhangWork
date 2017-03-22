@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HudEndPointPrimaryLauncher</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_launcher">LauncherActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_halo_hud_default">HaloHudDefaultActivity</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="title_activity_test_moo">TestActivityMoo</string>
+    <string name="title_activity_halo_base">HaloBaseActivity</string>
+    <string name="title_activity_halo_base_actvity">HaloBaseActvity</string>
+    <string name="error_network">搜索失败,请检查网络连接！</string>
+    <string name="error_key">key验证无效！</string>
+    <string name="error_other">未知错误，请稍后重试!错误码为</string>
+    <string name="no_result">对不起，没有搜索到相关数据！</string>
+    <string name="gpsfollow">追随</string>
+    <string name="gpslocate">定位</string>
+    <string name="gpsrotate">旋转</string>
+    <string name="navi_car">驾车</string>
+    <string name="navi_foot">步行</string>
+    <string name="navi_empty_car">"驾   车"</string>
+    <string name="navi_empty_foot">"步   行"</string>
+    <string name="navi_start">"起    点"</string>
+    <string name="navi_middle">途经点</string>
+    <string name="navi_end">"终    点"</string>
+    <string name="navi_strategy">"策    略"</string>
+    <string name="navi_route">路径规划</string>
+    <string name="navi_navi">模拟导航</string>
+    <string name="start_navi_navi">实时导航</string>
+    <string name="navi_strategy_speed">速度最快</string>
+    <string name="navi_strategy_cost">避免收费</string>
+    <string name="navi_strategy_distance">距离最短</string>
+
+    <string name="navi_strategy_nohighway">不走高速快速路</string>
+    <string name="navi_strategy_timenojam">时间最短且躲避拥堵</string>
+    <string name="navi_strategy_costnojam">避免收费且躲避拥堵</string>
+
+    <string name="phone_incoming_text">来电</string>
+
+    <string name="phone_incoming_receive">\" 接听 \"</string>
+    <string name="phone_incoming_rejuest">\" 挂断 \"</string>
+    <string name="speech_initing_word">语音引擎初始化中...</string>
+    <string name="amap_wake_word">\" 你好， 光晕 \"</string>
+    <string name="amap_commandlist_navi">\"导航到... \"</string>
+    <string name="amap_commandlist_call">\"打电话给... \"</string>
+    <string name="amap_commandlist_music">\"播放音乐 \"</string>
+    <string name="amap_commandlist_wechat">\"发送微信 \"</string>
+    <string name="amap_poilist_voice">搜索到%s，请说第几个；手势平伸双指选第一个</string>
+    <string name="amap_poilist_voice_next">搜索到%s</string>
+    <string name="amap_destination_search">开始查找</string>
+    <string name="amap_destination_round_search">开始查找</string>
+    <string name="amap_poilist_choose_prev">已为你选择上一页</string>
+    <string name="amap_poilist_choose_next">已为你选择下一页</string>
+    <string name="speech_fail_word">语音初始化失败，请重启设备</string>
+    <string name="speech_network_fail_word">网络连接不可用，无法正常使用导航和音月，你可以打电话或者查看行车记录仪</string>
+    <string name="speech_network_fail_tts">无网络连接，不能发起导航和听音月</string>
+    <string name="speech_network_fail_navi_tts">无网络连接，不能发起导航</string>
+    <string name="speech_network_fail_music_tts">无网络连接，不能听音月</string>
+    <string name="speech_bluetooth_fail_call_tts">蓝牙未连接，不能打电话</string>
+    <string name="speech_bluetooth_connect_tts">蓝涯已连接</string>
+    <string name="speech_bluetooth_disconnect_tts">蓝涯已断开</string>
+    <string name="speech_bluetooth_call_compling_tts">通讯录正在加载，请稍候</string>
+    <string name="speech_bluetooth_call_fail_tts">通讯录加载失败，请断开重试</string>
+    <string name="speech_bluetooth_call_compile_start">开始加载通讯录</string>
+    <string name="amap_strategy_shortest_distance">距离最短</string>
+    <string name="amap_strategy_default">用时最少</string>
+    <string name="amap_strategy_nojam">躲避拥堵</string>
+
+    <string name="amap_strategy_wait_shortest_distance">\" 距离最短 \"</string>
+    <string name="amap_strategy_wait_default">\" 用时最少 \"</string>
+    <string name="amap_strategy_wait_nojam">\" 躲避拥堵 \"</string>
+    <string name="amap_strategy_start_navi">\" 开始导航 \"</string>
+
+    <string name="amap_locchoose_title">请选择第几个:</string>
+
+    <string name="mypoistion">我的位置</string>
+    <string name="mappoistion">地图点选</string>
+    <string name="positioninfo">位置信息</string>
+    <string name="routeshow">线路展示</string>
+    <string name="tapmap">点击地图设置</string>
+    <string name="starttapmap">我的位置（可点击地图设置）</string>
+    <string name="walkdescription">步行状态不可用</string>
+    <string name="routeinfo">全程   --公里/--分钟    收费 --元</string>
+    <string name="routeinfo_1">全程 </string>
+    <string name="routeinfo_2">公里/</string>
+    <string name="routeinfo_3">"分钟    收费"</string>
+    <string name="routeinfo_4">元</string>
+    <string name="routeinfo_default">--</string>
+    <string name="theme_blue">经典蓝</string>
+    <string name="theme_pink">可爱粉</string>
+    <string name="theme_white">简约白</string>
+    <string name="app_id">输入您讯飞的appid</string>
+    <string name="preference_default_tts_role">xiaoyan</string>
+    <string name="preference_key_tts_speed">tts_speed</string>
+    <string name="preference_title_tts_speed">语速</string>
+    <string name="preference_default_tts_speed">50</string>
+    <string name="preference_dialog_title_tts_speed">选择语速</string>
+    <string name="preference_key_tts_volume">tts_volume</string>
+    <string name="preference_title_tts_volume">音量</string>
+    <string name="preference_default_tts_volume">50</string>
+    <string name="preference_dialog_title_tts_volume">选择音量</string>
+    <string name="preference_key_tts_pitch">tts_pitch</string>
+    <string name="preference_title_tts_pitch">语调</string>
+    <string name="preference_default_tts_pitch">50</string>
+    <string name="intell_bd_title">智能播报</string>
+    <string name="start_title">示例代码</string>
+    <string name="base_function">基本功能</string>
+    <string name="hud_title">HUD显示</string>
+    <string name="extend_title">扩展功能</string>
+    <string name="navibar_title">路径规划</string>
+    <string name="complex_function">综合展示</string>
+    <string name="title_activity_halo_care_land">HaloCareLandActivity</string>
+    <string name="wakeup_word">\"你好，魔方\"</string>
+
+    <string name="prompt_navi_demo">\"导航到深圳湾\"</string>
+    <string name="prompt_call_demo">\"打电话给光晕\"</string>
+    <string name="prompt_music_demo">\"播放音乐\"</string>
+
+    <string name="speech_pann_call_demo">\"打电话给光晕科技\"</string>
+
+    <array name="prompt_navi_demo_array">
+        <item>导航到深圳湾</item>
+        <item>加油站</item>
+    </array>
+    <array name="prompt_music_demo_array">
+        <item>播放音乐</item>
+        <item>下一首</item>
+    </array>
+    <array name="prompt_call_demo_array">
+        <item>打电话给光晕</item>
+        <item>光晕网络</item>
+    </array>
+    <array name="prompt_recoder_demo_array">
+        <item>打开行车记录仪</item>
+        <item>精彩视频</item>
+    </array>
+
+
+    <string name="wakeup_prompt">请说</string>
+    <string name="wakeup_prompt_select">请选择</string>
+    <string name="navi_arrive_estination">到达目的地，导航结束</string>
+    <string name="navi_end_emulator_navi">到达目的地，模拟导航结束</string>
+    <string name="navi_setting_amap_navi">已设置为地图模式，你可以说导航到哪里</string>
+    <string name="navi_setting_arway_navi">已设置为极简模式，你可以说导航到哪里</string>
+    <string name="navi_setting_navi_error">导航中无法设置导航模式，你可以说退出导航</string>
+    <string name="navi_exit_prompt">确定退出导航吗</string>
+    <string name="navi_exit_confirm">已退出本次导航</string>
+    <string name="navi_arrive_estination_exit">本次导航结束，已退出</string>
+    <string name="navi_exit_cancel">已取消退出，继续导航</string>
+    <string name="navi_speech_exit">已退出</string>
+    <string name="tts_speech_delete">已删除</string>
+    <string name="navi_re_planing_the_route">前方路线拥堵，路线重新规划</string>
+    <string name="nav_calculate_route_failure">路径计算失败，请检查网络或输入参数</string>
+    <string name="navi_speech_error_stopNavigating"> 当前不在导航状态</string>
+    <string name="record_tfcard_out">外置存储卡,被拔出,行车记录仪不可用</string>
+    <string name="record_open_tts">正在打开行车记录仪，你可以说精彩视频或者循环视频</string>
+    <string name="record_wonderful_video_tts">正在播放精彩视频，你可以说上一段或者下一段</string>
+    <string name="record_loop_video_tts">正在播放循环视频，你可以说上一段或者下一段</string>
+    <string name="record_start_tts">正在开启后台录像</string>
+    <string name="record_stop_tts">已关闭后台录像</string>
+    <string name="onclick_music_error_tts">未播放音乐，无法暂停或者播放</string>
+    <string name="onclick_next_error_tts">未播放音乐，无法切换下一首</string>
+    <string name="onclick_photo_success_tts">拍照成功</string>
+    <string name="call_speech_hangup">已挂断</string>
+    <string name="call_speech_incomming">%s来电,你可以选择接听或者挂断</string>
+    <string name="music_play_stop">已关闭音乐</string>
+    <string name="music_play_error">无效的命令</string>
+
+    <string name="carrecorder_play_loop_order">快进 / 快退 / 加锁 / 删除</string>
+    <string name="carrecorder_play_lock_order">快进 / 快退 / 删除</string>
+
+</resources>

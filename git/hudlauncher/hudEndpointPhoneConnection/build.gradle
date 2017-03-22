@@ -1,0 +1,64 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 21
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile project(':endpointsSharedLib')//compile files('libs/endpointsSharedLib.jar')
+    compile project(':endpointsTransportLayerLib')//compile files('libs/endpointsTransportLayerLib.jar')
+    compile 'com.android.support:support-v4:21.0.3'
+    compile 'com.google.protobuf:protobuf-java:2.5.0'
+}
+
+
+/*
+//task to delete the old jar
+task deleteConnectionOldJar(type: Delete) {
+    delete './../hudEndPointPrimaryLauncher/libs/hudendpointphoneconnection.jar'
+    delete './../hudUniversalIOLib/libs/hudendpointphoneconnection.jar'
+    delete 'build/hudendpointphoneconnection.jar'
+}
+//task to export contents as jar
+task exportConnectionJar(type: Copy) {
+    from('build/intermediates/bundles/release/')
+    into('build')
+    include('classes.jar')
+    rename('classes.jar', 'hudendpointphoneconnection.jar')
+}
+
+//task to copy jar
+task copyConnectionJar2HudLauncher(type: Copy) {
+    from('build/intermediates/bundles/release/')
+    into('./../hudEndPointPrimaryLauncher/libs/')
+    include('classes.jar')
+    rename('classes.jar', 'hudendpointphoneconnection.jar')
+}
+//task to copy jar
+task copyConnectionJar2UniversalIO(type: Copy) {
+    from('build/intermediates/bundles/release/')
+    into('./../hudUniversalIOLib/libs/')
+    include('classes.jar')
+    rename('classes.jar', 'hudendpointphoneconnection.jar')
+}
+
+copyConnectionJar2HudLauncher.dependsOn(deleteConnectionOldJar);
+copyConnectionJar2UniversalIO.dependsOn(copyConnectionJar2HudLauncher)
+exportConnectionJar.dependsOn(copyConnectionJar2UniversalIO)
+*/

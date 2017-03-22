@@ -1,0 +1,121 @@
+import "HudScreenMessages.proto";
+import "HudMessagesCommon.proto";
+import "HudP2HNavigationMessages.proto";
+
+package com.haloai.hud.proto;
+option java_package = "com.haloai.hud.proto";
+
+message PhoneResourceResponseMessage {
+	required ResourceRequest resource_request = 1;
+	required bytes resource_data = 2;
+}
+
+message QueryHudInfoMessage {
+	required QueryType query_type = 1;
+	
+	enum QueryType {
+		ALL					=	1;
+		DEVICE_SN_VER		=	2;	//Query the device version and SN number
+		DEVICE_CAPACITY		=	3;	//Query the device capacity, for example the Screen resolution
+	}
+}
+
+message PhoneCallNotificationMessage {
+	//Current phone call status.
+	required PhoneCallStatus phone_call_status = 1;
+	//Contact name or incoming call number.
+	required string contact_name = 2; 
+	//The contact book id in the site phone, can be used to query the detail contact information.(The mobile phone will sync the whole contact book data to HUD while setups.)
+	optional string contact_id = 3; 
+	//Actually, there no need this field. HUD will request the avatar via PhoneResourceRequestMessage when the 'contact_id' is valid.
+	optional bytes contact_avatar = 4; 
+
+	enum PhoneCallStatus {
+		PHONE_CALL_IDLE				=	1;	//No activity
+		PHONE_CALL_INCOMING_RING	=	2;	//A new call arrived
+		PHONE_CALL_OUTGOING_RING	=	3;	//A outgoing call happened
+		PHONE_CALL_OFFHOOK			=	4;	//At least one call exists
+	}
+}
+
+//PhoneSMS includes SMS/Weibo/WeChat etc.
+message PhoneSMSNotificationMessage {
+	required PhoneSMSType sms_type	=	1;
+	optional string	sms_sender		=	2;
+	required string sms_body		=	3;
+
+	enum PhoneSMSType {
+		SMS_TYPE_SMS		=	1;
+		SMS_TYPE_WECHAT		=	2;
+		SMS_TYPE_WEIBO		=	3;
+	}
+}
+
+message MusicStateNotificationMessage {
+	required bool playing		=	1;
+	optional string track_name	=	2;
+	optional string album_name	=	3;
+	optional string artist_name	=	4;
+}
+
+message PhoneNotificationMessage {
+	optional PhoneCallNotificationMessage phone_call_notification_message = 1;
+	repeated PhoneSMSNotificationMessage phone_sms_notification_message = 2; //Can carry with multiple phone SMS.
+	optional MusicStateNotificationMessage music_state_notification_message = 3;
+}
+
+message HudWifiConfigurationMessage {
+	required string wifi_ap_name = 1;
+	required string wifi_password = 2;
+}
+
+message HudSetScreenTheme {
+	required string theme_name = 1;
+}
+
+message HudConfigurationsMessage {
+	optional HudWifiConfigurationMessage hud_wifi_config_message = 1;
+	optional HudSetScreenTheme hud_set_screen_theme = 2;
+}
+
+message HudTestFullScreenImageMessage {
+	//required bool display_flag = 1;
+    optional int32 image_number = 1; 
+    optional bool cancel_test_image = 2;
+    optional bytes image_byte_array = 3;
+}
+
+message HudTestAMapMessage{
+    required bool amap_is_start = 1;
+}
+
+message HudWeChatStateMessage {
+    required int32 wechat_state = 1;
+}
+
+message HudMockGPSMessage {
+	required double lat = 1;
+	required double lng = 2;
+	required double time = 3;
+	required double altitude = 4;
+}
+
+message HudP2HCommandMessages {
+    optional HudWeChatStateMessage hud_wechat_state_message = 1;
+    optional HudTestFullScreenImageMessage hud_test_full_screen_image_message = 2;
+    optional HudTestAMapMessage hud_test_amap_message = 3;
+    optional HudMockGPSMessage hud_mock_gps_message = 4;
+}
+
+message HudP2HMessages {
+	optional HudScreenTileDataMessage hud_screen_tile_message = 1;
+	optional HudScreenTileVisibleMessage hud_screen_tile_visible_message = 2;
+	optional PhoneResourceResponseMessage phone_resource_response_message = 3;
+	optional QueryHudInfoMessage query_hud_info_message = 4;
+	optional PhoneNotificationMessage phone_notification_message = 5;
+	optional NavigationCommandMessage navi_command_message	= 6;
+	optional HudConfigurationsMessage hud_configurations_message = 7;
+	//optional HudTestCommandMessage hud_test_command_message = 8;
+	//optional HudWeChatMessage hud_wechat_message = 9;
+	optional HudP2HCommandMessages hud_p2hcommand_messages = 8;
+}

@@ -1,0 +1,18 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_incoming_sixline_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEEE00"
+   >
+    
+    <com.haloai.hud.hudendpoint.views.HudScreenViewGroup
+        android:id="@+id/content_container"
+        android:layout_width="780px"
+        android:layout_height="305px"
+        android:layout_marginLeft="10px"
+        android:layout_marginRight="10px"
+      
+        android:background="#000000" />
+
+</FrameLayout>

@@ -1,0 +1,88 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        minSdkVersion 10
+        targetSdkVersion 19
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:21.0.3'
+    compile 'com.google.protobuf:protobuf-java:2.5.0'
+    compile 'com.tencent.bugly:crashreport:latest.release'
+    compile files('libs/AMap_3DMap_V3.3.2_20160525.jar')
+    compile files('libs/AMap_Location_v2.3.0_20160112.jar')
+    compile files('libs/AMap_Navi_v1.6.0_20151229.jar')
+    compile files('libs/TingPhoneOpenSDK_4.2.4.jar')
+    compile files('libs/XmDownload_1.3.jar')
+    //    compile files('libs/AMap_Navi_v1.6.0_20151229.jar')
+    compile files('libs/MapApiServices.jar')
+    //    compile files('libs/AMap3DMap_3.4.0_AMapNavi_1.9.2_20160830.jar')
+    //    compile files('libs/AMap3DMap_4.0.1_AMapNavi_1.9.2_AMapSearch_3.4.0_20160923.jar')
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.squareup.okio:okio:1.8.0'
+    compile 'com.squareup.okhttp3:okhttp:3.3.1'
+}
+/*
+//task to delete the old jar
+task deleteSharedLibOldJar(type: Delete) {
+    delete './../hudEndPointPrimaryLauncher/libs/endpointsSharedLib.jar'
+    delete './../endpointsTransportLayerLib/libs/endpointsSharedLib.jar'
+    delete './../hudEndpointPhoneConnection/libs/endpointsSharedLib.jar'
+    delete 'build/endpointsSharedLib.jar'
+
+}
+
+//task to export contents as jar
+task exportSharedLibJar(type: Copy) {
+    from('build/intermediates/bundles/release/')
+    into('build')
+    include('classes.jar')
+    rename('classes.jar', 'endpointsSharedLib.jar')
+}
+
+//task to copy jar
+task copySharedLibJar2HudLauncher(type: Copy) {
+    from('build/intermediates/bundles/release/')
+    into('./../hudEndPointPrimaryLauncher/libs/')
+    include('classes.jar')
+    rename('classes.jar', 'endpointsSharedLib.jar')
+}
+//task to copy jar
+task copySharedLibJar2TransportLayerLib(type: Copy) {
+    from('build/intermediates/bundles/release/')
+    into('./../endpointsTransportLayerLib/libs/')
+    include('classes.jar')
+    rename('classes.jar', 'endpointsSharedLib.jar')
+}
+//task to copy jar
+task copySharedLibJar2PhoneConnection(type: Copy) {
+    from('build/intermediates/bundles/release/')
+    into('./../hudEndpointPhoneConnection/libs/')
+    include('classes.jar')
+    rename('classes.jar', 'endpointsSharedLib.jar')
+}
+//task to copy jar
+task copySharedLibJar2UniversalIO(type: Copy) {
+    from('build/intermediates/bundles/release/')
+    into('./../hudUniversalIOLib/libs/')
+    include('classes.jar')
+    rename('classes.jar', 'endpointsSharedLib.jar')
+}
+
+copySharedLibJar2HudLauncher.dependsOn(deleteSharedLibOldJar);
+copySharedLibJar2TransportLayerLib.dependsOn(copySharedLibJar2HudLauncher);
+copySharedLibJar2UniversalIO.dependsOn(copySharedLibJar2TransportLayerLib);
+copySharedLibJar2PhoneConnection.dependsOn(copySharedLibJar2UniversalIO);
+exportSharedLibJar.dependsOn(copySharedLibJar2PhoneConnection)*/

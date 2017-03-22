@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.haloai.hud.hudendpoint.primarylauncher"
+          android:installLocation="auto"
+          android:versionCode="${app_code}"
+          android:versionName="${app_version}">
+
+    <!--android:sharedUserId="android.uid.system"-->
+
+    <uses-sdk
+        android:minSdkVersion="16"
+    android:targetSdkVersion="21"/>
+
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <!-- 调用相机权限 -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINS"/>
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <!-- <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" /> -->
+    <!-- <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" /> -->
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_GPS"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_MMS"/>
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+
+    <uses-permission
+        android:name="android.permission.DEVICE_POWER"
+        tools:ignore="ProtectedPermissions"/>
+    <!-- 获取运行任务栈信息 -->
+
+
+    <!-- 设置任务栈到前台的权限 -->
+    <uses-permission android:name="android.permission.REORDER_TASKS"/>
+
+    <application
+        android:name=".HUDApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+
+        <!-- sen key :57588b45dac3526802b3494adf798a57 -->
+        <!-- sen pro key :c70a6b59865e1dfaec1793811e9d6f9d -->
+        <!-- zhangrui key :4dc2a76eba9ddae94efc1de30ef37fed -->
+        <!-- zhangrui realease key :143302753b054519d0f6019dae628d73 -->
+        <!-- ylq key :701017dfbe7880e23b4e068d77529c3f -->
+        <!-- <ylqrelease key:815f725ab6742be4acc1c70464a5f4ef> -->
+        <!-- hl key :19d7c5d2bc0d6997c7bad815c2ede9f3 -->
+        <!-- halo key :bcd8dc3e0be352d30703adb1e5b592f0 -->
+        <!-- halo_release key :62bc1f301911bc1bc878af98e80b590d -->
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="${amap_key}"/>
+        <meta-data
+            android:name="BUGLY_APPID"
+            android:value="${bugly_app_id}"/>
+        <meta-data
+            android:name="BUGLY_APP_VERSION"
+            android:value="${app_version}"/>
+
+        <meta-data
+            android:name="app_key"
+            android:value="1d59482b5a90860607f1f0785ad5bb8c" />
+
+        <meta-data
+            android:name="pack_id"
+            android:value="com.haloai.hud.hudendpoint.primarylauncher" />
+
+        <!-- 高德定位服务 -->
+        <service android:name="com.amap.api.location.APSService"/>
+
+        <!-- required：声明fota下载升级的服务 -->
+        <service android:name="com.fota.iport.service.DLService"/>
+        <!--
+             required：升级后上报数据 和 开机检测是否升级成功 <br/>
+            注意：当前广播的优先级一定要高于其他开机广播的优先级
+        -->
+        <receiver android:name="com.fota.iport.receiver.UpgradeReceiver">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.haloai.hud.hudendpoint.upgrade.UpgradeReceiver">
+            <intent-filter android:priority="2">
+                <action android:name="action.iport.recovery.upgrade"/>
+            </intent-filter>
+        </receiver>
+        <!-- 喜马拉雅播放器 -->
+        <service android:name="com.ximalaya.ting.android.opensdk.player.service.XmPlayerService"
+        android:process=":player"/>
+
+        <activity
+            android:name=".HudLauncherActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" >
+             <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.LAUNCHER" />
+                 <!--<category android:name="android.intent.category.HOME" />-->
+<!--
+                <category android:name="android.intent.category.HOME" />
+-->
+            </intent-filter>
+        </activity>
+
+        <service android:name="com.haloai.hud.hudendpoint.services.MusicPlayService"/>
+        <service android:name="com.haloai.hud.hudendpoint.services.PhoneProxyService"/>
+        <service android:name="com.haloai.hud.hudendpoint.upgrade.UpgradeService"/>
+
+        <activity
+            android:name=".HaloAMapNaviStartActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="${screen_orien}"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        </activity>
+        <!-- android:screenOrientation="reverseLandscape" -->
+        <activity android:name=".HaloMockStartActivity">
+        </activity>
+    </application>
+
+</manifest>

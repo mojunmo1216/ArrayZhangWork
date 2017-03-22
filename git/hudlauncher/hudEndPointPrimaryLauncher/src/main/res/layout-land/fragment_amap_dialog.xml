@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+
+    <!--<ImageView-->
+        <!--android:id="@+id/fragment_incoming_cover"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@color/black" />-->
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/dialog_navi_info_frame"-->
+        <!--android:visibility="gone"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<RelativeLayout-->
+            <!--android:layout_width="125dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:layout_marginLeft="3dp"-->
+            <!--android:layout_marginTop="19dp">-->
+            <!--<ImageView-->
+                <!--android:id="@+id/dialog_navi_img"-->
+                <!--android:layout_width="33dp"-->
+                <!--android:layout_height="41dp"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_alignParentLeft="true"/>-->
+            <!--<TextView-->
+                <!--android:id="@+id/dialog_navi_text"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="2.67dp"-->
+                <!--android:layout_toRightOf="@id/dialog_navi_img"-->
+                <!--android:maxLines="1"-->
+                <!--android:padding="0dp"-->
+                <!--android:text="0米"-->
+                <!--android:textColor="#ffffff"-->
+                <!--android:textSize="24sp"/>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/dialog_next_road_text"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@id/dialog_navi_text"-->
+                <!--android:layout_marginLeft="2.67dp"-->
+                <!--android:layout_marginTop="3.5dp"-->
+                <!--android:layout_toRightOf="@id/dialog_navi_img"-->
+                <!--android:maxLines="1"-->
+                <!--android:padding="0dp"-->
+                <!--android:text=""-->
+                <!--android:textColor="#ffffff"-->
+                <!--android:textSize="12sp"/>-->
+
+        <!--</RelativeLayout>-->
+
+    <!--</RelativeLayout>-->
+
+    <include
+        android:id="@+id/common_navigation_tips"
+        layout="@layout/layout_common_naving_tips"
+        ></include>
+
+
+    <include
+        android:id="@+id/caller_main_ring_panel_viewgroup"
+        layout="@layout/layout_call_panel_ringcall"
+        ></include>
+
+
+
+
+    <!--
+         <RelativeLayout
+            android:layout_width="378dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="70dp">
+
+            <RelativeLayout
+                android:id="@+id/fragment_incoming_sixline_container"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:layout_centerInParent="true"
+                android:background="@android:color/transparent">
+
+                <com.haloai.hud.hudendpoint.fragments.view.PathView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/pathView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:pathColor="#2544A2"
+                    app:pathWidth="5" />
+
+                <com.haloai.hud.hudendpoint.fragments.view.PathView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/pathView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:pathColor="#2544A2"
+                    app:pathWidth="5" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/fragment_incoming_centertext_container"
+                android:layout_width="200dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/fragment_incoming_center_text"
+                    style="@style/IncomingStyle"
+                    android:layout_centerInParent="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/fragment_incoming_text_left_black"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/black" />
+
+                <ImageView
+                    android:id="@+id/fragment_incoming_text_right_black"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="@android:color/black" />
+            </RelativeLayout>
+
+            &lt;!&ndash;蓝色正六边形&ndash;&gt;
+            <ImageView
+                android:id="@+id/fragment_incoming_sexangle"
+                style="@style/IncomingStyle"
+                android:layout_centerInParent="true"
+                android:alpha="1"
+                android:src="@drawable/call_sexangle" />
+            &lt;!&ndash;六边形大框&ndash;&gt;
+            <ImageView
+                android:id="@+id/fragment_incoming_largesex"
+                style="@style/IncomingStyle"
+                android:layout_centerInParent="true"
+                android:alpha="0"
+                android:src="@drawable/call_sex_large" />
+            &lt;!&ndash;正六边形小框&ndash;&gt;
+            <ImageView
+                android:id="@+id/fragment_incoming_smallsex"
+                style="@style/IncomingStyle"
+                android:layout_centerInParent="true"
+                android:alpha="0"
+                android:src="@drawable/call_sex_small" />
+            &lt;!&ndash;正中间的电话图标&ndash;&gt;
+            <ImageView
+                android:id="@+id/fragment_incoming_center_phone_icon"
+                style="@style/IncomingStyle"
+                android:layout_centerInParent="true"
+                android:alpha="0"
+                android:src="@drawable/call_phone" />
+
+            &lt;!&ndash;右biubiu图标&ndash;&gt;
+            <RelativeLayout
+                android:id="@+id/right_biubiu_container"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true">
+
+                <ImageView
+                    android:id="@+id/pointer"
+                    style="@style/IncomingStyle"
+                    android:alpha="0"
+                    android:src="@drawable/call_slide" />
+
+                <ImageView
+                    android:id="@+id/pointer2"
+                    style="@style/IncomingStyle"
+                    android:alpha="0"
+                    android:src="@drawable/call_slide" />
+
+                <ImageView
+                    android:id="@+id/pointer3"
+                    style="@style/IncomingStyle"
+                    android:alpha="0"
+                    android:src="@drawable/call_slide" />
+
+                <ImageView
+                    android:id="@+id/pointer4"
+                    style="@style/IncomingStyle"
+                    android:alpha="0"
+                    android:src="@drawable/call_slide" />
+
+                <ImageView
+                    android:id="@+id/pointer5"
+                    style="@style/IncomingStyle"
+                    android:alpha="0"
+                    android:src="@drawable/call_slide" />
+
+                <ImageView
+                    android:id="@+id/pointer6"
+                    style="@style/IncomingStyle"
+                    android:alpha="0"
+                    android:src="@drawable/call_slide" />
+
+                <ImageView
+                    android:id="@+id/pointer7"
+                    style="@style/IncomingStyle"
+                    android:alpha="0"
+                    android:src="@drawable/call_slide" />
+
+                <ImageView
+                    android:id="@+id/line"
+                    style="@style/IncomingStyle"
+                    android:alpha="0"
+                    android:src="@drawable/call_line" />
+            </RelativeLayout>
+
+            &lt;!&ndash;左biubiu图标&ndash;&gt;
+            <RelativeLayout
+                android:layout_width="170dp"
+                android:layout_height="50dp">
+
+                <ImageView
+                    android:id="@+id/pointer00"
+                    style="@style/IncomingStyle"
+                    android:layout_alignParentRight="true"
+                    android:alpha="0"
+                    android:src="@drawable/call_slide" />
+
+                <ImageView
+                    android:id="@+id/pointer01"
+                    style="@style/IncomingStyle"
+                    android:layout_alignParentRight="true"
+                    android:alpha="0"
+                    android:src="@drawable/call_slide" />
+
+                <ImageView
+                    android:id="@+id/pointer02"
+                    style="@style/IncomingStyle"
+                    android:layout_alignParentRight="true"
+                    android:alpha="0"
+                    android:src="@drawable/call_slide" />
+
+                <ImageView
+                    android:id="@+id/pointer03"
+                    style="@style/IncomingStyle"
+                    android:layout_alignParentRight="true"
+                    android:alpha="0"
+                    android:src="@drawable/call_slide" />
+
+                <ImageView
+                    android:id="@+id/pointer04"
+                    style="@style/IncomingStyle"
+                    android:layout_alignParentRight="true"
+                    android:alpha="0"
+                    android:src="@drawable/call_slide" />
+
+                <ImageView
+                    android:id="@+id/pointer05"
+                    style="@style/IncomingStyle"
+                    android:layout_alignParentRight="true"
+                    android:alpha="0"
+                    android:src="@drawable/call_slide" />
+
+                <ImageView
+                    android:id="@+id/pointer06"
+                    style="@style/IncomingStyle"
+                    android:layout_alignParentRight="true"
+                    android:alpha="0"
+                    android:src="@drawable/call_slide" />
+
+                <ImageView
+                    android:id="@+id/line0"
+                    style="@style/IncomingStyle"
+                    android:layout_alignParentRight="true"
+                    android:alpha="0"
+                    android:src="@drawable/call_line" />
+            </RelativeLayout>
+
+            &lt;!&ndash;去电文字&ndash;&gt;
+            <TextView
+                android:id="@+id/fragment_incoming_outgoing_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0"
+                android:layout_centerVertical="true"
+                android:textColor="@android:color/white"
+                android:textSize="17sp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textStyle="bold"
+                android:layout_toLeftOf="@id/right_biubiu_container"/>
+
+            <RelativeLayout
+                android:id="@+id/fragment_incoming_part_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0">
+                &lt;!&ndash;接听和拒绝图标&ndash;&gt;
+
+                <TextView
+                    android:id="@+id/fragment_incoming_anwser_text"
+                    style="@style/IncomingStyle"
+                    android:text="接听"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/fragment_incoming_anwser_icon"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/fragment_incoming_anwser_text"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/call_answer_icon" />
+
+                <TextView
+                    android:id="@+id/fragment_incoming_hangup_text"
+                    style="@style/IncomingStyle"
+                    android:layout_alignParentRight="true"
+                    android:text="拒绝"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/fragment_incoming_hangup_icon"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/fragment_incoming_hangup_text"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/call_hangup_icon" />
+            </RelativeLayout>
+        </RelativeLayout>
+    -->
+</RelativeLayout>

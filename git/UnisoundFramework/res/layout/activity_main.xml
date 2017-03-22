@@ -1,0 +1,60 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/bt_tts_recognize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tts_recognize" />
+
+        <Button
+            android:id="@+id/bt_tts_wakeup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tts_wakeup" />
+
+        <Button
+            android:id="@+id/bt_set_wakeup_word"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/set_wakeupword" />
+
+        <Button
+            android:id="@+id/bt_set_normal_wakeup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/set_normal_wakeup" />
+
+        <Button
+            android:id="@+id/bt_set_oneshot_wakeup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/set_oneshot_wakeup" />
+
+        <Button
+            android:id="@+id/bt_start_compile_manual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/start_compile_manual" />
+
+        <Button
+            android:id="@+id/bt_cancel_speech"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel_speech" />
+
+        <Button
+            android:id="@+id/bt_set_current_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/set_current_city" />
+    </LinearLayout>
+
+</ScrollView>

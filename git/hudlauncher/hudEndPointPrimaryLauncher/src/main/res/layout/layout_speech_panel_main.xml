@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="107dp"-->
+        <!--android:layout_marginRight="25dp"-->
+        <!--android:layout_marginTop="50dp"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<RelativeLayout-->
+            <!--android:id="@+id/panel_navi_normal_layout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="3"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="@dimen/speech_panel_title_icon_size"-->
+                    <!--android:layout_height="@dimen/speech_panel_title_icon_size"-->
+                    <!--android:src="@drawable/voice_menu_icon_navigation" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/panel_commmon_textview_1"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="2dp"-->
+                    <!--android:scaleType="fitXY"-->
+                    <!--android:text="导航"-->
+                    <!--android:textColor="@color/color_speech_panel_title"-->
+                    <!--android:textSize="@dimen/speech_panel_title_size" />-->
+            <!--</LinearLayout>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/panel_commmon_textview_2"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_marginTop="30dp"-->
+                <!--android:letterSpacing="0.1"-->
+                <!--android:text="导航到深圳湾"-->
+                <!--android:textColor="@color/color_speech_panel_subtitle"-->
+                <!--android:textSize="@dimen/speech_panel_subtitle_size" />-->
+        <!--</RelativeLayout>-->
+
+        <!--<RelativeLayout-->
+            <!--android:id="@+id/panel_navi_noconnect_layout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:layout_weight="3"-->
+            <!--android:visibility="gone">-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_marginLeft="20dp"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="@dimen/speech_panel_title_icon_size"-->
+                    <!--android:layout_height="@dimen/speech_panel_title_icon_size"-->
+                    <!--android:src="@drawable/navigation_unplug_icon" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/nonet_panel_textview_1"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="2dp"-->
+                    <!--android:scaleType="fitXY"-->
+                    <!--android:text="导航"-->
+                    <!--android:textColor="@color/color_speech_panel_no_network"-->
+                    <!--android:textSize="@dimen/speech_panel_title_size" />-->
+            <!--</LinearLayout>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/nonet_panel_textview_2"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_marginTop="30dp"-->
+                <!--android:letterSpacing="0.1"-->
+                <!--android:text="无网络信号"-->
+                <!--android:textColor="@color/color_speech_panel_no_network"-->
+                <!--android:textSize="@dimen/speech_panel_subtitle_size" />-->
+        <!--</RelativeLayout>-->
+
+        <!--<RelativeLayout-->
+            <!--android:id="@+id/panel_music_normal_layout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="-8dp"-->
+            <!--android:layout_weight="3"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="@dimen/speech_panel_title_icon_size"-->
+                    <!--android:layout_height="@dimen/speech_panel_title_icon_size"-->
+                    <!--android:src="@drawable/voice_menu_icon_music" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/panel_commmon_textview_3"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="5dp"-->
+                    <!--android:scaleType="fitXY"-->
+                    <!--android:text="音乐"-->
+                    <!--android:textColor="@color/color_speech_panel_title"-->
+                    <!--android:textSize="@dimen/speech_panel_title_size" />-->
+            <!--</LinearLayout>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/panel_commmon_textview_4"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_marginTop="30dp"-->
+                <!--android:letterSpacing="0.1"-->
+                <!--android:text="播放音乐"-->
+                <!--android:textColor="@color/color_speech_panel_subtitle"-->
+                <!--android:textSize="@dimen/speech_panel_subtitle_size" />-->
+        <!--</RelativeLayout>-->
+
+        <!--<RelativeLayout-->
+            <!--android:id="@+id/panel_music_noconnect_layout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="-8dp"-->
+            <!--android:layout_weight="3"-->
+            <!--android:visibility="gone">-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerHorizontal="true">-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="@dimen/speech_panel_title_icon_size"-->
+                    <!--android:layout_height="@dimen/speech_panel_title_icon_size"-->
+                    <!--android:src="@drawable/music_unplug_icon" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/nonet_panel_textview_3"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="2dp"-->
+                    <!--android:letterSpacing="0.1"-->
+                    <!--android:text="音乐"-->
+                    <!--android:textColor="@color/color_speech_panel_no_network"-->
+                    <!--android:textSize="@dimen/speech_panel_title_size" />-->
+            <!--</LinearLayout>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/nonet_panel_textview_4"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_marginTop="30dp"-->
+                <!--android:text="无网络信号"-->
+                <!--android:textColor="@color/color_speech_panel_no_network"-->
+                <!--android:textSize="@dimen/speech_panel_subtitle_size" />-->
+        <!--</RelativeLayout>-->
+
+        <!--<RelativeLayout-->
+            <!--android:id="@+id/panel_call_normal_layout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="3">-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerHorizontal="true">-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="@dimen/speech_panel_title_icon_size"-->
+                    <!--android:layout_height="@dimen/speech_panel_title_icon_size"-->
+                    <!--android:src="@drawable/voice_menu_icon_call" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/panel_commmon_textview_5"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="2dp"-->
+                    <!--android:scaleType="fitXY"-->
+                    <!--android:text="电话"-->
+                    <!--android:textColor="@color/color_speech_panel_title"-->
+                    <!--android:textSize="@dimen/speech_panel_title_size" />-->
+            <!--</LinearLayout>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/panel_commmon_textview_6"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_marginTop="30dp"-->
+                <!--android:letterSpacing="0.1"-->
+                <!--android:text="打电话给光晕"-->
+                <!--android:textColor="@color/color_speech_panel_subtitle"-->
+                <!--android:textSize="@dimen/speech_panel_subtitle_size" />-->
+        <!--</RelativeLayout>-->
+
+        <!--<RelativeLayout-->
+            <!--android:id="@+id/panel_call_noconnect_layout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="3"-->
+            <!--android:visibility="gone">-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerHorizontal="true">-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="@dimen/speech_panel_title_icon_size"-->
+                    <!--android:layout_height="@dimen/speech_panel_title_icon_size"-->
+                    <!--android:src="@drawable/caller_unplug_icon" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/nonet_panel_textview_5"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="2dp"-->
+                    <!--android:text="电话"-->
+                    <!--android:textColor="@color/color_speech_panel_no_network"-->
+                    <!--android:textSize="@dimen/speech_panel_title_size" />-->
+            <!--</LinearLayout>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/panel_commmon_textview_7"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_marginTop="30dp"-->
+                <!--android:letterSpacing="0.1"-->
+                <!--android:text="蓝牙未连接"-->
+                <!--android:textColor="@color/color_speech_panel_no_network"-->
+                <!--android:textSize="@dimen/speech_panel_subtitle_size" />-->
+        <!--</RelativeLayout>-->
+
+        <!--&lt;!&ndash;<RelativeLayout&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_weight="3">&ndash;&gt;-->
+
+            <!--&lt;!&ndash;<LinearLayout&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_centerHorizontal="true">&ndash;&gt;-->
+
+                <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_width="@dimen/speech_panel_title_icon_size"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_height="@dimen/speech_panel_title_icon_size"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:src="@drawable/carrecorder_scan_camera_icon" />&ndash;&gt;-->
+
+                <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:id="@+id/panel_commmon_textview_8"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_marginLeft="2dp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:text="记录仪"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:textColor="@color/color_speech_panel_title"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:textSize="@dimen/speech_panel_title_size" />&ndash;&gt;-->
+            <!--&lt;!&ndash;</LinearLayout>&ndash;&gt;-->
+
+            <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+                <!--&lt;!&ndash;android:id="@+id/panel_commmon_textview_9"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_centerHorizontal="true"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_marginTop="30dp"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:letterSpacing="0.1"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:text="行车记录仪"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:textColor="@color/color_speech_panel_subtitle"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:textSize="@dimen/speech_panel_subtitle_size" />&ndash;&gt;-->
+        <!--&lt;!&ndash;</RelativeLayout>&ndash;&gt;-->
+    <!--</LinearLayout>-->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:layout_marginLeft="107dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            >
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!--<ImageView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:src="@drawable/two_level_bg"/>-->
+
+                <ImageView
+                    android:layout_width="15pt"
+                    android:layout_height="15pt"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/navigation_icon_unselect"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:text="导航"
+                    android:textColor="@color/color_speech_panel_title"
+                    android:textSize="22sp"
+                    android:id="@+id/textView0" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="导航到深圳湾"
+                    android:textColor="@color/color_speech_panel_title"
+                    android:textSize="12sp"
+                    android:layout_alignStart="@+id/textView0"
+                    android:layout_below="@+id/textView0" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/panel_navi_normal_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/two_level_bg"/>
+
+                <ImageView
+                    android:layout_width="15pt"
+                    android:layout_height="15pt"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/navigation_icon_select"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:text="导航"
+                    android:textColor="@color/color_speech_panel_title"
+                    android:textSize="22sp"
+                    android:id="@+id/textViewselect0" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="导航到深圳湾"
+                    android:textColor="@color/color_speech_panel_title"
+                    android:textSize="12sp"
+                    android:layout_alignStart="@+id/textViewselect0"
+                    android:layout_below="@+id/textViewselect0"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!--<ImageView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:src="@drawable/two_level_bg"/>-->
+
+                <ImageView
+                    android:layout_width="15pt"
+                    android:layout_height="15pt"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/music_icon_unselect"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:text="音乐"
+                    android:textColor="@color/color_speech_panel_title"
+                    android:textSize="22sp"
+                    android:id="@+id/textView1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="播放音乐"
+                    android:textColor="@color/color_speech_panel_title"
+                    android:textSize="12sp"
+                    android:layout_alignStart="@+id/textView1"
+                    android:layout_below="@+id/textView1"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/panel_music_normal_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/two_level_bg"/>
+
+                <ImageView
+                    android:layout_width="15pt"
+                    android:layout_height="15pt"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/music_icon_select"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:text="音乐"
+                    android:textColor="@color/color_speech_panel_title"
+                    android:textSize="22sp"
+                    android:id="@+id/textViewselect1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="播放音乐"
+                    android:textColor="@color/color_speech_panel_title"
+                    android:textSize="12sp"
+                    android:layout_alignStart="@+id/textViewselect1"
+                    android:layout_below="@+id/textViewselect1"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!--<ImageView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:src="@drawable/two_level_bg"/>-->
+
+                <ImageView
+                    android:layout_width="15pt"
+                    android:layout_height="15pt"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/call_icon_unselect"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:text="电话"
+                    android:textColor="@color/color_speech_panel_title"
+                    android:textSize="22sp"
+                    android:id="@+id/textView2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="打电话给光晕"
+                    android:textColor="@color/color_speech_panel_title"
+                    android:textSize="12sp"
+                    android:layout_alignStart="@+id/textView2"
+                    android:layout_below="@+id/textView2"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/panel_call_normal_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/two_level_bg"/>
+
+                <ImageView
+                    android:layout_width="15pt"
+                    android:layout_height="15pt"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/call_icon_select"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:text="电话"
+                    android:textColor="@color/color_speech_panel_title"
+                    android:textSize="22sp"
+                    android:id="@+id/textViewselect2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="打电话给光晕"
+                    android:textColor="@color/color_speech_panel_title"
+                    android:textSize="12sp"
+                    android:layout_alignStart="@+id/textViewselect2"
+                    android:layout_below="@+id/textViewselect2"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

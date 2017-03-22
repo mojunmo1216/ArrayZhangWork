@@ -1,0 +1,66 @@
+<resources>
+
+    <string name="app_name">HudUniversalIOLib</string>
+
+    <string name="tts_wakeup_prompt">您可以一口气说你好魔方导航到哪里，或者你好魔方打电话给谁</string>
+
+    <!--play tts -->
+    <string name="tts_error_null_protocal">抱歉,没听清,请再说一遍</string>
+    <string name="tts_error_timeout_default">你可以说导航到哪里,打电话给谁,听谁的歌等</string>
+    <string name="tts_error_timeout_back_default_view">未识别到有效命令,已退出识别</string>
+
+    <string name="tts_error_unrecognize_default">未识别的命令，请重说</string>
+    <string name="tts_error_unactive_command">无效的命令，请重说</string>
+    <string name="tts_error_exit_navi">未发起导航,无需退出</string>
+    <string name="tts_error_wake_promat">请说</string>
+
+    <string name="tts_normal_recognized_default">你可以说导航到哪里,打电话给谁,听谁的歌</string>
+    <string name="tts_recognized_undefine_function">抱歉,没听清,请再说一遍</string>
+
+    <!--paser error-->
+    <string name="tts_error_session_paser">无法识别，请重试</string>
+    <string name="tts_error_session_music_paser">无法识别，请重试</string>
+    <string name="tts_error_session_map_paser">无法识别，请重试</string>
+    <string name="tts_error_session_command_paser">无法识别，请重试</string>
+    <string name="tts_error_session_contact_paser">无法识别，请重试</string>
+    <string name="tts_error_session_recorder_paser">无法识别，请重试</string>
+
+    <!--三级界面-->
+    <string name="tts_recognized_navigation">请说去哪里</string>
+    <string name="tts_recognized_call">请说打电话给谁</string>
+    <string name="tts_recognized_music">请说歌曲名或歌手名</string>
+    <string name="tts_recognized_music_control">您可以说暂停或下一首</string>
+
+    <!--session 状态提示-->
+    <string name="tts_session_music_no_found">未能找到您说的歌曲，请重试</string>
+    <string name="tts_session_map_no_found">未能找到您说的地点，请重试</string>
+    <string name="tts_session_command_no_found">未能找到您说的命令，请重试</string>
+    <string name="tts_session_contact_no_found">未能找到您说的联系人，请重试</string>
+    <string name="tts_session_contact_no_init">通讯录加载失败，拨打电话无法正常使用</string>
+    <string name="tts_session_recorder_video_no_found">当前不存在该类视频，请换其他类型的视频观看</string>
+
+    <string name="tts_session_navi_destination_set_for">正在为您导航到</string>
+    <string name="tts_session_navi_poi_pick">请说第几个</string>
+    <string name="tts_session_navi_arrive_estination">到达目的地，导航结束</string>
+    <string name="tts_session_navi_gps_signal_week">GPS信号弱</string>
+    <string name="tts_session_emulator_navi_arrive_estination">到达目的地，模拟导航结束</string>
+    <string name="tts_session_navi_re_planing_the_route">前方路线拥堵，路线重新规划</string>
+    <string name="tts_session_nav_calculate_route_failure">路径计算失败，请检查网络或输入参数</string>
+    <string name="tts_session_naving_calculate_route_failure"> 网络超时，导航路径计算失败,请稍后重试</string>
+    <string name="tts_session_nav_calculate_onyaw">您已偏航，正在重新计算路径，请稍后</string>
+
+    <string name="tts_session_recorder_secard_no_found">外置存储卡,被拔出,行车记录仪不可用</string>
+    <string name="tts_session_recorder_no_this_type_video">暂无该视频</string>
+
+    <string name="tts_session_contact_pick">请说第几个或上一页下一页</string>
+    <string name="tts_session_contact_pick_num">请说第几个</string>
+    <string name="tts_bluetooth_download_finish">通讯录加载完成，你可以说打电话给谁</string>
+
+    <string name="tts_session_navi_home_nofound">您还未设置回家的地址,请直接说地址</string>
+    <string name="tts_session_navi_company_nofound">您还未设置公司的地址,请直接说地址</string>
+
+    <string name="tts_open_gesture">已打开手势</string>
+    <string name="tts_close_gesture">已关闭手势</string>
+
+
+</resources>

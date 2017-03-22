@@ -1,0 +1,74 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 21
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:21.0.3'
+    compile 'org.slf4j:slf4j-api:1.7.19'
+    compile 'org.slf4j:slf4j-log4j12:1.7.19'
+    compile 'log4j:log4j:1.2.17'
+    compile 'org.apache.mina:mina-core:2.0.13'
+   // provided  files('libs/endpointsSharedLib.jar')
+    compile project(':endpointsSharedLib')
+}
+
+/*//task to delete the old jar
+task deleteTransportLayerLibOldJar(type: Delete) {
+    delete './../hudEndPointPrimaryLauncher/libs/endpointsTransportLayerLib.jar'
+    delete './../hudEndpointPhoneConnection/libs/endpointsTransportLayerLib.jar'
+    delete './../hudUniversalIOLib/libs/endpointsTransportLayerLib.jar'
+    delete 'build/endpointsTransportLayerLib.jar'
+}
+//task to export contents as jar
+task exportTransportLayerLibJar(type: Copy) {
+    from('build/intermediates/bundles/release/')
+    into('build')
+    include('classes.jar')
+    rename('classes.jar', 'endpointsTransportLayerLib.jar')
+}
+
+//task to copy jar
+task copyTransportLayerLibJar2HudLauncher(type: Copy) {
+    from('build/intermediates/bundles/release/')
+    into('./../hudEndPointPrimaryLauncher/libs/')
+    include('classes.jar')
+    rename('classes.jar', 'endpointsTransportLayerLib.jar')
+}
+//task to copy jar
+task copyTransportLayerLibJar2PhoneConnection(type: Copy) {
+    from('build/intermediates/bundles/release/')
+    into('./../hudEndpointPhoneConnection/libs/')
+    include('classes.jar')
+    rename('classes.jar', 'endpointsTransportLayerLib.jar')
+}
+//task to copy jar
+task copyTransportLayerLibJar2UniversalIO(type: Copy) {
+    from('build/intermediates/bundles/release/')
+    into('./../hudUniversalIOLib/libs/')
+    include('classes.jar')
+    rename('classes.jar', 'endpointsTransportLayerLib.jar')
+}
+
+
+copyTransportLayerLibJar2HudLauncher.dependsOn(deleteTransportLayerLibOldJar,build);
+copyTransportLayerLibJar2UniversalIO.dependsOn(copyTransportLayerLibJar2HudLauncher);
+copyTransportLayerLibJar2PhoneConnection.dependsOn(copyTransportLayerLibJar2UniversalIO);
+exportTransportLayerLibJar.dependsOn(copyTransportLayerLibJar2PhoneConnection)*/

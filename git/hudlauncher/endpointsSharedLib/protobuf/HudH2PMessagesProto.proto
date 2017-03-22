@@ -1,0 +1,44 @@
+import "HudMessagesCommon.proto";
+
+package com.haloai.hud.proto;
+option java_package = "com.haloai.hud.proto";
+
+//Hud向手机端请求缺失的资源。
+message PhoneResourceRequestMessage {
+	required ResourceRequest resource_request	=	1;
+}
+
+//Hud向手机返回本Hud的信息，比如版本号、序列号和屏幕大小，当前使用的layout等。
+message QueryHudInfoResponseMessage {
+	optional string hud_version_number = 1;
+	optional string hud_serial_number = 2;
+	optional Size hud_screen_resolution = 3;
+	optional string hud_screen_layout = 4;  //手机端Hud SDK根据这个Layout，将知道Hud支持哪些数据显示，以便做中间协调人角色
+
+	message Size {
+		required int32 width = 1;
+		required int32 height = 2;
+	}
+}
+
+//Hud端向Phone端发送的命令格式，比如拨打电话、导航命令等
+message Hud2PhoneCommandMessage {
+	required string command_id = 1;	//由两端协商定义
+	optional string param1 = 2;		//参数1，字符串形式，两端也可约定为数值
+	optional string param2 = 3;		//参数2，字符串形式，两端也可约定为数值
+	optional string param3 = 4;		//参数3，字符串形式，两端也可约定为数值
+	optional bytes	param_bundle = 5; //当以上参数位不够时，两端可约定用字节流来传递参数，字节流格式两端协商约定
+}
+
+//Hud端向Phone端发送微信登录的二维码
+message WeChatImageMessage {
+    optional bytes wechat_image = 1;
+}
+
+message HudH2PMessages {
+	optional PhoneResourceRequestMessage phone_resource_request_message = 1;
+	optional QueryHudInfoResponseMessage query_hud_info_response_message = 2;
+	optional Hud2PhoneCommandMessage hud_to_phone_command_message = 3;
+	optional WeChatImageMessage wechat_image_message = 4;
+}
+

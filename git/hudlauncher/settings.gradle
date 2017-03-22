@@ -1,0 +1,11 @@
+include ':endpointsSharedLib', ':carrecorderlibrary'
+include ':endpointsTransportLayerLib'
+include ':hudEndpointPhoneConnection'
+include ':hudUniversalIOLib'
+include ':hudEndPointPrimaryLauncher'
+/*include ':arwaylib'
+project(':arwaylib').projectDir = new File('/Users/wangshengxing/project/arway/arwaylibrary')
+include ':openCVLibrary300'
+project(':openCVLibrary300').projectDir = new File('/Users/wangshengxing/project/arway/openCVLibrary300')*/
+
+

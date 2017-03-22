@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="210dp"
+        android:layout_marginRight="125dp"
+        android:layout_marginTop="20dp"
+        >
+
+
+        <TextView
+            android:id="@+id/caller_name_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:text="未知来电"
+            />
+
+        <TextView
+            android:id="@+id/sub_title_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/caller_name_textview"
+            android:singleLine="true"
+            android:textColor="#E3820F"
+            android:textSize="17sp"
+            android:gravity="center"
+            android:text="来电"
+            />
+
+
+        <ImageView
+            android:id="@+id/ring_call_icon"
+            android:layout_width="25pt"
+            android:layout_height="25pt"
+            android:src="@drawable/answer_call"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/sub_title_textview"
+            android:layout_marginTop="6dp"
+            />
+
+        <ImageView
+            android:id="@+id/stop_call_icon"
+            android:layout_width="25pt"
+            android:layout_height="25pt"
+            android:src="@drawable/end_call"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/sub_title_textview"
+            android:layout_marginTop="6dp"
+            />
+
+
+        <LinearLayout
+            android:id="@+id/receive_call_linerLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/ring_call_icon"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/receive_call_gesture"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:scaleType="fitXY"
+                android:text="接听"
+                android:textColor="@color/color_speech_panel_title"
+                android:textSize="@dimen/speech_panel_title_size" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/stop_call_linerLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/ring_call_icon"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:scaleType="fitXY"
+                android:layout_marginRight="5dp"
+                android:text="挂掉"
+                android:textColor="@color/color_speech_panel_title"
+                android:textSize="@dimen/speech_panel_title_size" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/right_hua_gesture"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="5dp"/>
+
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/stop_call_icon_Center"
+            android:layout_width="25pt"
+            android:layout_height="25pt"
+            android:src="@drawable/end_call"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/sub_title_textview"
+            android:layout_marginTop="6dp"
+            />
+
+        <LinearLayout
+            android:id="@+id/stop_call_linerLayout_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/stop_call_icon_Center"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:scaleType="fitXY"
+                android:layout_marginRight="5dp"
+                android:text="挂掉"
+                android:textColor="@color/color_speech_panel_title"
+                android:textSize="@dimen/speech_panel_title_size" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/right_hua_gesture"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="5dp"/>
+
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+</RelativeLayout>

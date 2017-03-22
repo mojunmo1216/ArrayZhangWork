@@ -1,0 +1,74 @@
+apply plugin: 'com.android.library'
+apply plugin: 'base'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 18
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:21.0.3'
+    compile 'com.google.code.gson:gson:2.3.1'
+    compile 'com.google.protobuf:protobuf-java:2.5.0'
+    compile project(':hudEndpointPhoneConnection')
+    compile files('libs/UniFrame-2.0.0.jar')
+    compile files('libs/UniData-1.0.jar')
+    compile files('libs/usc.jar')
+    compile files('libs/GEngine-1.0.0.jar')
+    //compile project(':endpointsTransportLayerLib')
+    provided files('libs/endpointsTransportLayerLib.jar')
+    compile project(':endpointsSharedLib')
+    //provided files('libs/endpointssharedlib.jar')
+    //compile project(':hudEndpointPhoneConnection')
+    //provided files('libs/hudendpointphoneconnection.jar')
+    compile 'com.belerweb:pinyin4j:2.5.0'
+}
+
+/*
+
+//task to delete the old jar
+task deleteUniversalOldJar(type: Delete) {
+    delete './../hudEndPointPrimaryLauncher/libs/hudUniversalIOLib.jar'
+    delete 'build/hudUniversalIOLib.jar'
+
+}
+
+//task to export contents as jar
+task exportUniversalJar(type: Copy) {
+    from('build/intermediates/bundles/release/')
+    into('build')
+    include('classes.jar')
+    ///Rename the jar
+    rename('classes.jar', 'hudUniversalIOLib.jar')
+}
+
+
+task copyUniversalJar2HudLauncher(type: Copy) {
+    from('build/intermediates/bundles/release/')
+    into('./../hudEndPointPrimaryLauncher/libs/')
+    include('classes.jar')
+    rename('classes.jar', 'hudUniversalIOLib.jar')
+}
+
+copyUniversalJar2HudLauncher.dependsOn(deleteUniversalOldJar,build)
+exportUniversalJar.dependsOn(copyUniversalJar2HudLauncher)
+*/
+
+

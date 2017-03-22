@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="268dp"
+    android:layout_height="100dp"
+    android:background="@android:color/transparent">
+
+
+ <!--   <RelativeLayout
+        android:id="@+id/speech_receiver_black"
+        android:layout_width="105dp"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-10dp"
+        android:background="@android:color/black"></RelativeLayout>-->
+
+    <com.haloai.hud.hudendpoint.fragments.view.SpeechReceiverView
+        android:id="@+id/speech_receiver_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></com.haloai.hud.hudendpoint.fragments.view.SpeechReceiverView>
+
+    <TextView
+        android:id="@+id/speech_panel_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="93dp"
+        android:layout_marginTop="63dp"
+        android:ellipsize="end"
+        android:maxEms="25"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <!--音量值的显示-->
+    <TextView
+        android:id="@+id/speech_volume_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="37dp"
+        android:alpha="0"
+        android:ellipsize="end"
+        android:maxEms="25"
+        android:singleLine="true"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <!--音量加减旋转圈-->
+    <ImageView
+        android:id="@+id/speech_volume_rotate_circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="11dp"
+        android:alpha="0"
+        android:src="@drawable/soundview_volume_circle_rotate"/>
+
+    <!--音量环的容器， 放在最下面，避免被黑板挡住-->
+    <FrameLayout
+        android:id="@+id/speech_receiver_voice_container"
+        android:layout_width="84dp"
+        android:layout_height="88dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="6dp"
+        android:background="@android:color/transparent"></FrameLayout>
+</RelativeLayout>

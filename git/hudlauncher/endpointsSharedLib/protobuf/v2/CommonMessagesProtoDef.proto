@@ -1,0 +1,19 @@
+syntax = "proto2";
+package com.haloai.hud.proto.v2;
+
+enum RecorderTypeProto{
+	LOOP_VIDEO          = 1;
+	LOCK_VIDEO          = 2;
+	WONDERFUL_VIDEO     = 3;
+	EMERGENCY_VIDEO     = 4;
+}
+
+//设置的消息定义
+message HudDataDefineProto {
+    required int32      hud_data_type = 1;
+    optional bool       bool_param = 2;
+    optional int32      int_param = 3;
+    optional double     double_param = 4;
+    optional string     extra_param = 5;
+    optional string     extra_param1 = 6;
+}

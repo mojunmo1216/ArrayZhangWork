@@ -1,0 +1,45 @@
+User 59%, System 33%, IOW 1%, IRQ 0%
+User 377 + Nice 0 + Sys 215 + Idle 33 + IOW 8 + IRQ 0 + SIRQ 1 = 634
+
+  PID PR CPU% S  #THR     VSS     RSS PCY UID      Name
+ 3948  0  33% S    74 1158580K 136440K  fg u0_a71   com.haloai.hud.hudendpoint.primarylauncher
+  251  0  29% S    58 481064K  16768K  fg media    /system/bin/mediaserver
+  422  0   6% S     1   9968K    556K  fg shell    logcat
+  252  0   6% S    22 157344K  10996K  fg root     /system/bin/carcorderserver
+  289  0   5% S     5  17268K    432K  fg shell    /sbin/adbd
+
+
+
+User 57%, System 38%, IOW 0%, IRQ 0%
+User 359 + Nice 0 + Sys 239 + Idle 24 + IOW 3 + IRQ 0 + SIRQ 0 = 625
+
+  PID PR CPU% S  #THR     VSS     RSS PCY UID      Name
+ 3948  1  35% S    74 1167248K 145680K  fg u0_a71   com.haloai.hud.hudendpoint.primarylauncher
+  251  0  29% S    58 481064K  16708K  fg media    /system/bin/mediaserver
+  422  0   7% S     1   9968K    556K  fg shell    logcat
+  289  1   6% S     5  17268K    444K  fg shell    /sbin/adbd
+  252  1   6% S    22 157344K  10508K  fg root     /system/bin/carcorderserver
+
+
+
+User 57%, System 37%, IOW 0%, IRQ 0%
+User 364 + Nice 0 + Sys 238 + Idle 31 + IOW 2 + IRQ 0 + SIRQ 1 = 636
+
+  PID PR CPU% S  #THR     VSS     RSS PCY UID      Name
+ 3948  0  37% S    74 1166980K 142940K  fg u0_a71   com.haloai.hud.hudendpoint.primarylauncher
+  251  0  30% S    58 481064K  16660K  fg media    /system/bin/mediaserver
+  422  1   7% R     1   9968K    556K  fg shell    logcat
+  289  0   7% S     5  17268K    460K  fg shell    /sbin/adbd
+  252  1   6% S    22 157344K  10508K  fg root     /system/bin/carcorderserver
+
+
+
+User 60%, System 35%, IOW 0%, IRQ 0%
+User 411 + Nice 0 + Sys 246 + Idle 26 + IOW 1 + IRQ 0 + SIRQ 1 = 685
+
+  PID PR CPU% S  #THR     VSS     RSS PCY UID      Name
+ 3948  0  32% S    74 1158812K 134732K  fg u0_a71   com.haloai.hud.hudendpoint.primarylauncher
+  251  1  28% R    61 510904K  16596K  fg media    /system/bin/mediaserver
+  422  1   7% R     1   9968K    560K  fg shell    logcat
+  252  1   6% S    22 157344K  10872K  fg root     /system/bin/carcorderserver
+  289  0   6% S     5  17268K    516K  fg shell    /sbin/adbd

@@ -1,0 +1,99 @@
+package com.haloai.hud.proto;
+option java_package = "com.haloai.hud.proto";
+option java_outer_classname = "HudScreenMessages";
+
+message HudScreenSetupMessage {
+	repeated HudScreenTileDescriptor hud_screen_tile = 1;
+
+	message HudScreenTileDescriptor {
+		required string tile_id	= 1;	//tile id which same as HudScreenTileDataMessage's 'id' field.
+		required TileDataSourceType data_source = 2;	//Data source type
+		required string left = 3;	//The left coordinate, an expression can calculate the real value.
+		required string top = 4;	//The top coordinate, an expression can calculate the real value.
+		required string right = 5;	//The right coordinate, an expression can calculate the real value.
+		required string bottom = 6;	//The bottom coordinate, an expression can calculate the real value.
+		optional string init_visible = 7; //Wether visible or invisible after initialize.
+		optional AnimationSet animation_set = 8;
+	}
+
+	message AnimationSet {
+	}
+
+	message TranslationAnimation {
+		optional string fromX = 1;	//The translation animation beginning screen point X coordination, an expression can calculate the real value.
+		optional string fromY = 2;	//The translation animation beginning screen point Y coordination, an expression can calculate the real value.
+		optional string toX = 3;	//The translation aniamtion endding screen point X coordination, an expression can calculate the real value.
+		optional string toY = 4;	//The translation aniamtion endding screen point Y coordination, an expression can calculate the real value.
+	}
+
+	enum TileDataSourceType {
+		TEXT		=	1;	//This tile message describes a text content.
+		NUMBERIC	=	2;	//This tile message describes a numberic data.
+		IMAGE		=	3;	//This tile message describes an image data.
+		NATIVE_RES	=	4;	//This tile message refers to a certain hud native resource, image or video or something else. Hud endpoint can request Phone endpoint sending the missing resource data when it couldn't find that one. 
+		NATIVE_DATA	=	5;	//A tile displays a visual effect according to Hud native data, for example the OBD data/GPS data ect.
+		RAW_DATA	=	6;
+	}
+
+}
+
+message HudScreenTileVisibleMessage {
+	repeated string visibleTileId = 1;		
+	repeated string invisibleTileId = 2;
+}
+
+message HudScreenTileDataMessage {	
+	required string id = 1;
+	optional HudScreenTextDataDescriptor text_content =	3;
+	optional HudScreenNumbericDataDescriptor numberic_content = 4;
+	optional HudScreenImageDataDescriptor image_content = 5;
+	optional HudScreenNativeResDataDescriptor native_res_content = 6;
+	optional HudScreenRawDataDescriptor raw_data_content = 7;
+
+	message HudScreenTextDataDescriptor {
+		repeated string text = 1;
+		optional string arg1 = 2;
+	}
+	
+	message HudScreenNumbericDataDescriptor {
+		required NumberType number_type = 1;
+		repeated int32 int32_data = 2 [packed=true];
+		repeated int64 int64_data = 3 [packed=true];
+		repeated float float_data = 4 [packed=true];
+		repeated double double_data = 5 [packed=true];
+		optional string arg1 = 6;
+
+		enum NumberType {
+			INT		=	1;
+			LONG	=	2;
+			FLOAT	=	3;
+			DOUBLE	=	4;
+		}
+	}
+
+	message HudScreenImageDataDescriptor {
+		repeated bytes image_data = 1;
+		optional string arg1 = 2;
+	}
+	
+	message HudScreenNativeResDataDescriptor {
+		repeated string native_res_data = 1;
+		optional string arg1 = 2;
+	}
+
+	message HudScreenRawDataDescriptor {
+		repeated bytes raw_data = 1;
+		optional string arg1 = 2;
+	}
+
+}
+
+message HudScreenLowRiskSituationMessage {
+
+}
+
+message HudScreenEmergencyMessage {
+
+}
+
+

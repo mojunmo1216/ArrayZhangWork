@@ -1,0 +1,116 @@
+syntax = "proto2";
+package com.haloai.hud.proto.v2;
+
+import "CommonMessagesProtoDef.proto";
+
+option java_package = "com.haloai.hud.proto.v2";
+
+//!!!!注意!!!!
+//1. 每次更新后，要修改protocol_version_code累加1
+//
+enum PhonePlatformProto {
+	ANROID		=	1;
+	IOS			=	2;
+}
+
+enum NaviDrivingStrategyProto {
+	DEFAULT			=	1;
+	SAVEMONEY		=	2;
+	SHORT_DISTANCE	=	3;
+	NO_EXPRESS_WAYS	=	4;
+	FASTEST_TIME	=	5;
+	AVOID_CONGESTION=	6;
+}
+
+//手机连接上HUD后的第一条协议消息定义
+message PhoneInfoDeclaimProto {
+	required int32			protocol_version_code	=	1[default=2];//端到端协议版本标识码,只在protobuf定义文件中修改，不要在代码中设置
+	required PhonePlatformProto	phone_platform_type	=	2;		//手机平台类型
+	required string			phone_platform_version	=	3;		//手机平台版本
+	required string			phone_app_version_str	=	4;		//手机端App版本字符串
+	required int32			phone_app_version_code	=	5;		//手机端App版本编码，Android下为VersionCode，iOS下为Build Number
+	required string			phone_unique_id			=	6;		//手机端唯一标识符，一般为手机硬件标识码
+	required string			phone_number			=	7;		//手机号码
+}
+
+//手机发起HUD查询请求消息定义
+//===HUD Status Query Bitwise Defines===
+//0x0001 - FM Status
+//0x0002 - HUD 4G Status 
+//===HUD Misc Info Query Bitwise Defines===
+//0x0001 - Wifi Information
+//0x0002 - Bluetooth Information
+//===HUD Music Info Query Bitwise===
+//0x0001 - Music Playing Status
+//0x0002 - Music Data Source
+//===HUD Navi Info Query Bitwise===
+//0x0001 - Navigation SDK Info
+//0x0002 - Navigation Status
+//===HUD Carcorder Info Query Bitwise===
+//0x0001 - Carcorder Device Info
+//====================================
+message HudQueryRequestProto {
+	optional int32			hud_status				=	1;		//查询的bitwise标识
+	optional int32			hud_misc_info			=	2;		//查询HUD的杂项信息
+	optional int32			feature_music_info		=	3;		//查询Hud的音乐信息
+	optional int32			feature_navi_info		=	4;		//查询Hud的导航信息
+	optional int32			feature_carcorder_info	=	5;		//查询Hud的行车记录仪信息
+}
+
+//手机规划导航后，路径协议消息定义
+message NaviRouteInfoProto {
+	required string			navi_destination_poi	=	1;		//目的地名
+	required double			navi_destination_lat	=	2;		//目的地纬度
+	required double			navi_destination_lng	=	3;		//目的地经度
+	required NaviDrivingStrategyProto navi_driving_strategy=	4;		//驾驶策略类型
+}
+
+//手机对HUD的设置消息定义
+message HudPrefSetProto {
+    required HudDataDefineProto hud_data_define =   1;
+}
+
+//手机对HUD的查询消息定义
+message HudPrefQueryRequestProto {
+    required int32 hud_data_type = 1;
+}
+
+
+//手机作为遥控器对HUD的命令消息定义
+message HudRemoterCommandProto {
+      required int32 hud_remoter_command_id = 1;// 0退出导航 1onclick 2播放协议  3删除视频
+      optional int32 int_param = 2;
+      optional int32 int_param_1 = 3;
+      optional int32 int_param_2 = 4;
+      optional string string_param = 5;
+}
+
+message RecorderVideoQueryProto {
+	required bool			begin_new_batch			=	1;		//开始一次全新的查询
+	required RecorderTypeProto	recorder_type		=	2;		//视频记录类型
+	required int32          video_index             =   3;      //视频索引
+	required int32          video_number            =   4;      //视频个数
+	required bool           video_thumbnail_required = 5;
+}
+
+message ThumRequestProto{
+    required RecorderTypeProto	recorder_type		    =	1;	//视频记录类型
+    required int32 thumbnail_index                      =   2;  //
+    required int32 thumbnail_number                     =   3;  //请求缩略图的个数
+}
+
+message PhoneRequestIdProto {
+    required string phone_request_serial_number = 1; //每次phone访问Hud协议的唯一流水号
+}
+//手机到HUD的端到端协议消息定义
+message Phone2HudMessagesProto {
+    required PhoneRequestIdProto        phone_request_id    =   1;      //手机请求协议的唯一ID
+	optional PhoneInfoDeclaimProto		phone_info_declaim	=	2;		//手机信息和验证消息
+	optional HudQueryRequestProto		hud_query_req		=	3;		//Hud状态查询
+	optional NaviRouteInfoProto			navi_phone_info		=	4;		//导航路径消息
+	optional HudPrefSetProto	        hud_pref_set		=	5;		// 设置hud
+	optional HudPrefQueryRequestProto   hud_pref_query      =   6;      // 请求设置值
+	optional HudRemoterCommandProto		hud_remot_command   =	7;		//手机遥控命令
+	repeated RecorderVideoQueryProto	recorder_video_query=	8;		//行车记录仪查询
+	repeated ThumRequestProto           thumb_request       =   9;      //图片传输请求
+}
