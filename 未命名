@@ -1,0 +1,34 @@
+# 工作总结
+
+## HUD 终端软件
+HUD终端软件，具有导航，音乐，蓝牙电话，行车记录仪的功能，支持语音，手势，手机端的输入
+整体使用的技术 架构分层比较多 具体架构如下：
+
+### WIFI传输
+ hud与手机端之间的传输，采用蓝牙BLE和WIFI传输两种模式
+ 其中WIFI传输采用Mina框架进行Socket通信
+ 数据采用谷歌推出的protoBuffer数据结构
+* Mina 框架
+
+> Apache MINA(Multipurpose Infrastructure for Network Applications) 是 Apache 组织一个较新的项目，它为开发高性能和高可用性的网络应用程序提供了非常便利的框架。当前发行的 MINA 版本支持基于 Java NIO 技术的TCP/IP 应用程序开发、串口通讯程序
+
+![mina icon](/Users/zhangrui/Desktop/image001.jpg "Mina 框架交互流程")
+
+ 主要的技术难点在于，针对每一次的传输，都需要进行相对应的封包，解包的过程，由于是封装的TCP/IP协议，IOS端也可以通用。
+
+ 由于WiFi传输比较快速，可以用来传输数据量比较大的文件，
+ 在HUD项目中也用来传输视频，由于视频比较大，所以需要每次对视频文件进行切割，校准。
+
+* ProtoBuffer
+
+>Protocol Buffer是Google 的一种轻便高效的结构化数据存储格式，可以用于结构化数据串行化，很适合做数据存储或 RPC 数据交换格式。
+
+ProtoBuffer 数据格式 如下：
+
+![protobuf](/Users/zhangrui/Desktop/B3D55481-94F6-4E77-AF79-58494AA8505F.png "protoBuf 数据结构")
+
+需要特别注意的地方，使用的时候需要配置本地的protobuffer编译环境,可支持JAVA，C++,OC 等等
+环境配置好后，执行编译语句：
+>protoc --proto_path=./ --java_out=../../src/main/java ./*.proto
+
+注意：*当数据结构发生更改时，都需要重新编译一次*
