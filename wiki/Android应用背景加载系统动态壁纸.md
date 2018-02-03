@@ -1,16 +1,16 @@
-#Android 应用背景加载系统动态壁纸
+# Android 应用背景加载系统动态壁纸
  
-##需求
+## 需求
 
  客户的需求总是那么让人摸不着头脑，我们的应用和系统的launcher是共同存在的**双桌面**形式，客户要求应用必须支持系统桌面的壁纸，针对这个需求，静态壁纸很容易实现，但是**动态壁纸**就很麻烦了，毕竟我们的只是一个应用伪launcher，并不是在真正的launcher源码上进行更改的桌面程序。
  
-##思路
+## 思路
  
  在网上查了很多资料之后才有了一点思路，动态壁纸并不是运行在activity界面，虽然都是以apk的形式存在于android系统中，但是主要是运行在一个**壁纸窗口**的**WallPaperService**。所以需要将我们的应用主题设置成**透明**，再将动态壁纸的窗口贴合应用的acivity窗口，后面看过android原生**launcher3**的源码之后发现系统也是这样实现的
 
-##实现
+## 实现
 
-###1.透明背景
+### 1.透明背景
 将应用的主Activity的主题设置为**透明**
 
      <activity
@@ -129,5 +129,5 @@ Stack Overflow](https://stackoverflow.com/questions/13683464/set-live-wallpaper-
  **intent.setClassName("com.android.noisefield", "com.android.noisefield.NoiseFieldWallpaper");**
  这里可以替换成，自己定义的动态壁纸或者其他Android 自带动态壁纸的包名，壁纸服务名
 
-##总结
+## 总结
 前前后后总共花了三天才搞定这个需求，一开始想的太简单，还好**源码**和**StackOverflow** 帮了大忙，以后一定要多读系统源码
